@@ -22,7 +22,7 @@ export default function Header() {
 	return (
 		<header
 			className={`
-		flex justify-between md:items-center mx-5 md:mx-20 lg:mx-[112px] my-6  ${
+		flex justify-between md:items-center px-5 md:px-20 lg:px-[112px] py-6 ${
 			isMenuOpen ? 'h-screen flex-col justify-start gap-8 ml-20' : 'h-auto'
 		} transition-all duration-300`}>
 			{isMenuOpen ? (
@@ -37,12 +37,12 @@ export default function Header() {
 				</button>
 			) : (
 				<>
-					<Logo />
+					<Logo color='black' />
 					<BurgerMenu onclick={() => setIsMenuOpen(true)} />
 				</>
 			)}
-			<NavBar clicked={isMenuOpen} />
-			<ResumeLink clicked={isMenuOpen} />
+			<NavBar isMenuOpen={isMenuOpen} />
+			<ResumeLink isMenuOpen={isMenuOpen} />
 		</header>
 	);
 }

@@ -2,7 +2,7 @@ import { linksInfo } from '../../constants';
 import Link from './Link';
 import { NavLink } from '../../types/nav';
 
-export default function NavBar({ clicked }: { clicked: boolean }) {
+export default function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
 	const links = linksInfo.map((link: NavLink) => (
 		<Link
 			key={link.path}
@@ -14,7 +14,7 @@ export default function NavBar({ clicked }: { clicked: boolean }) {
 	return (
 		<ul
 			className={`md:flex md:flex-row ${
-				clicked ? 'flex flex-col mt-30' : 'hidden'
+				isMenuOpen ? 'flex flex-col mt-30' : 'hidden'
 			} gap-8 text-[16px]/[20px]`}>
 			{links}
 		</ul>
