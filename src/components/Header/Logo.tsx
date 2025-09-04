@@ -1,4 +1,3 @@
-import logoImg from '../../assets/logo.svg';
 
 export default function Logo({ color }: { color: string }) {
 	return (
