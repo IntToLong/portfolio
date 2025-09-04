@@ -1,37 +1,50 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap');
 
-:root {
-	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-	line-height: 1.5;
-	font-weight: 400;
+@import 'tailwindcss';
 
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+/*fix autofill background*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	border: 1px solid #676666;
+	transition: background-color 5000s ease-in-out 0s;
+}
 
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+html {
+	scroll-behavior: smooth;
 }
 
 body {
-	margin: 0;
-	display: flex;
-	place-items: center;
-	min-width: 320px;
-	min-height: 100vh;
+	font-family: 'Sora', sans-serif;
+	/* background-color: #fefefe; */
+	/* background-color: #f0f0f0; */
 }
 
-@media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #ffffff;
-	}
-	a:hover {
-		color: #747bff;
-	}
-	button {
-		background-color: #f9f9f9;
-	}
+@theme {
+	--font-sora: 'Sora', sans-serif;
+	--font-outfit: 'Outfit', sans-serif;
+
+	--color-error: #ef4444;
+	--color-primary-black: #000;
+	--color-primary-neutral: #404040;
+	--color-primary-white: #fff;
+	--color-zinc-100: #f4f4f5;
+	--color-zinc-200: #e4e4e7;
+	--color-zinc-300: #d4d4d8;
+	--color-zinc-500: #71717a;
+	--color-zinc-800: #27272a;
+
+	--shadow-bottom: 4px 4px 0px #000;
 }
+
+@utility flex-center {
+	@apply flex justify-center items-center;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
