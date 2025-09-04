@@ -7,7 +7,7 @@ export default function ResumeLink({ isMenuOpen }: { isMenuOpen: boolean }) {
 			className={`group px-4 py-3 rounded md:border-2 text-primary-white bg-primary-black w-[153px] h-14 gap-2 hover:bg-primary-neutral active:text-primary-black active:bg-primary-white active:shadow-bottom md:flex-center ${
 				isMenuOpen ? 'flex-center' : 'hidden'
 			}`}>
-			<span className='font-semibold text-[16px]/[20px]'>Resume</span>{' '}
+			<span className='font-semibold text-[16px]/[20px] lg:text-xl/[120%]'>Resume</span>{' '}
 			<svg
 				width='20'
 				height='20'

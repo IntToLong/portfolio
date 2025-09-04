@@ -3,8 +3,8 @@ export default function Logo({ color }: { color: string }) {
 	return (
 		<div className='flex-center hover:scale-125 transition-all duration-300 ease-in cursor-pointer'>
 			<svg
-				width='45'
-				height='45'
+				width='55'
+				height='55'
 				viewBox='0 0 98 76'
 				fill='none'
 				xmlns='http://www.w3.org/2000/svg'>

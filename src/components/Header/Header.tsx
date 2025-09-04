@@ -21,9 +21,9 @@ export default function Header() {
 
 	return (
 		<header
-			className={`
+			className={`bg-primary-white z-50
 		flex justify-between md:items-center px-5 md:px-20 lg:px-[112px] py-6 ${
-			isMenuOpen ? 'h-screen flex-col justify-start gap-8 ml-20' : 'h-auto'
+			isMenuOpen ? 'h-screen flex-col justify-start gap-8 pl-20' : 'h-auto'
 		} transition-all duration-300`}>
 			{isMenuOpen ? (
 				<button

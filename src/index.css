@@ -47,4 +47,10 @@ body {
 	@apply flex justify-center items-center;
 }
 
+@utility text-stroke-* {
+	-webkit-text-stroke-width: calc(--value(integer) * 1px);
+	-webkit-text-stroke-color: --value(--color-*);
+	-webkit-text-stroke-color: --value([*]);
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
