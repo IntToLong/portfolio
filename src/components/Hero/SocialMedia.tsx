@@ -8,16 +8,16 @@ export default function SocialMedia() {
 	return (
 		<div className='flex gap-6 text-black '>
 			<SocialCard path='https://www.linkedin.com/in/nataliia-luibynets/'>
-				<LinkedinIcon className='group-hover:fill-primary-white w-10 h-10' />
+				<LinkedinIcon className='group-hover:fill-primary-white w-5 h-5 md:w-10 md:h-10' />
 			</SocialCard>
 			<SocialCard path='https://github.com/IntToLong/'>
-				<GitHubIcon className='group-hover:fill-primary-white w-10 h-10' />
+				<GitHubIcon className='group-hover:fill-primary-white w-5 h-5 md:w-10 md:h-10' />
 			</SocialCard>
 			<SocialCard path='https://inttolong.github.io/Resume/'>
-				<FacebookIcon className='group-hover:fill-primary-white w-10 h-10' />
+				<FacebookIcon className='group-hover:fill-primary-white w-5 h-5 md:w-10 md:h-10' />
 			</SocialCard>
 			<SocialCard path='#contact'>
-				<GmailIcon className='group-hover:fill-primary-white w-10 h-10' />
+				<GmailIcon className='group-hover:fill-primary-white w-5 h-5 md:w-10 md:h-10' />
 			</SocialCard>
 		</div>
 	);

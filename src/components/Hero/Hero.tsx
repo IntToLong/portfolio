@@ -3,7 +3,7 @@ import girl from '../../assets/girlWithLaptop.svg';
 
 export default function Hero() {
 	return (
-		<div className='flex-center flex-col-reverse md:flex-row  justify-evenly mx-6 md:mx-20 md:my-15'>
+		<div className='flex-center flex-col-reverse md:flex-row  justify-evenly md:my-15'>
 			<section className='flex flex-col gap-8 md:w-1/2'>
 				<div className='flex flex-col gap-3 lg:gap-5 text-[28px]/[114%] lg:text-5xl/[117%] tracking-tight'>
 					<h2>
