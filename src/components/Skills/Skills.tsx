@@ -13,8 +13,8 @@ import SkillCard from './SkillCard';
 
 export default function Skills() {
 	return (
-		<section className='my-20'>
-			<h2 className='text-center text-[28px]/[114%] tracking-tight mb-10'>
+		<section className='my-20 px-4 sm:px-6 md:px-20 lg:px-28'>
+			<h2 className='text-center text-[28px]/[114%] lg:text-[48px]/[114%] tracking-tight mb-10'>
 				<span className='pr-4'>My</span>
 				<span className='font-extrabold'>Skills</span>
 			</h2>
