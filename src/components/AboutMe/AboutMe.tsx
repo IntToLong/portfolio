@@ -1,7 +1,7 @@
 import girl from '../../assets/girl.svg';
 export default function AboutMe() {
 	return (
-		<section className='p-4 sm:p-6 md:p-20 lg:px-28 flex flex-col lg:flex-row gap-10 my-10 bg-primary-black'>
+		<section className='p-4 sm:p-6 md:p-20 lg:px-28 flex flex-col lg:flex-row gap-10 my-10 bg-primary-black' id='about'>
 			<div className='lg:w-1/2 flex-center'>
 				<img
 					src={girl}

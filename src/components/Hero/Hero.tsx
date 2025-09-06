@@ -8,7 +8,7 @@ export default function Hero() {
 				<div className='flex flex-col gap-3 lg:gap-5 text-[28px]/[114%] lg:text-5xl/[117%] tracking-tight'>
 					<h2>
 						<span>Hello, I`am</span>{' '}
-						<span className='font-extrabold'>Flora Sheen.</span>{' '}
+						<span className='font-extrabold'>Natalia.</span>{' '}
 					</h2>
 					<p>
 						<span className='font-extrabold'>Frontend </span>
