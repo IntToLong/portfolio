@@ -19,7 +19,7 @@ export default function Project({
 	return (
 		<article
 			{...props}
-			className='flex flex-col items-start gap-10 border-2 rounded-lg p-3 md:p-10 xl:p-20 bg-primary-black text-primary-white flex-grow hover:scale-95 transition-all duration-500'>
+			className='flex flex-col items-start gap-10 border-2 rounded-lg p-3 md:p-10 xl:p-20 bg-primary-black text-primary-white flex-grow hover:scale-[1.02] transition-all duration-100'>
 			<div className='flex flex-col gap-10'>
 				<p className='font-extrabold text-2xl md:text-4xl text-neutral-900 text-primary-white'>
 					{number < 10 ? `0${number}` : number}

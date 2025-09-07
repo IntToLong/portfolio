@@ -1,7 +1,5 @@
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
-
 import SocialCard from '../Hero/SocialCard';
 import Input from './Input';
 import FacebookIcon from '../../assets/social/facebook.svg?react';
