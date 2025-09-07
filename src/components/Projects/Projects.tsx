@@ -3,17 +3,15 @@ import Project from './Project';
 
 export default function Projects() {
 	return (
-		<section className='px-4 sm:px-6 md:px-20 lg:px-28 md:my-20' id='projects'>
+		<section
+			className='px-4 sm:px-6 md:px-15 xl:px-28 my-5 sm:my-10 md:my-20'
+			id='projects'>
 			<h2 className='text-center text-[28px]/[114%] lg:text-[48px]/[114%] tracking-tight mb-10'>
 				<span className='pr-4'>My</span>
 				<span className='font-extrabold'>Projects</span>
 			</h2>
-			<div>
+			<div className='grid lg:grid-cols-2 gap-3 md:gap-10 lg:gap-15 xl:gap-30'>
 				{projectsData.map((project) => {
-					let styles = '';
-					if (project.number % 2 === 0) {
-						styles = 'md:flex-row-reverse';
-					}
 					return (
 						<Project
 							key={project.number}
@@ -22,9 +20,9 @@ export default function Projects() {
 							number={project.number}
 							title={project.title}
 							description={project.description}
-							path={project.path}
-                            technologies={project.technologies}
-                            styles={styles}
+							demo={project.demo}
+							github={project.github}
+							technologies={project.technologies}
 						/>
 					);
 				})}

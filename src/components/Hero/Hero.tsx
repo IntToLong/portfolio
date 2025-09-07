@@ -4,13 +4,13 @@ import { TypeAnimation } from 'react-type-animation';
 
 export default function Hero() {
 	return (
-		<div className='px-4 sm:px-6 md:px-20 lg:px-28 flex-center flex-col-reverse md:flex-row  justify-evenly md:my-15'>
+		<div className='px-4 sm:px-6 md:px-20 lg:px-28 flex-center flex-col-reverse md:flex-row  justify-evenly md:mb-15 md:mt-10'>
 			<section className='flex flex-col gap-8 md:w-1/2'>
 				<div className='flex flex-col gap-3 lg:gap-5 text-[28px]/[114%] lg:text-5xl/[117%] tracking-tight'>
 					<h2>
 						<span>Hello, I`am</span>{' '}
 						<TypeAnimation
-							sequence={['Nataliia', 1000, '', 1000, 'Nataliia.', 1000]}
+							sequence={['Nataliia', 1000, '', 1000, 'Nataliia', 1000]}
 							wrapper='span'
 							speed={50}
 							style={{ fontWeight: 800, display: 'inline-block' }}
@@ -29,10 +29,11 @@ export default function Hero() {
 					</p>
 				</div>
 				<p className='text-zinc-500 font-normal text-base/6'>
-					I'm Flora Sheen Lorem Ipsum is simply dummy text of the printing and
-					typesetting industry. Lorem Ipsum has been the industry's standard
-					dummy text ever since the 1500s, when an unknown printer took a galley
-					of type and scrambled it to specimen book.
+					I am a passionate and highly motivated technology enthusiast with a
+					strong focus on building innovative solutions and continuously
+					expanding my skills. My goal is to grow as a developer and contribute
+					to meaningful projects within the dynamic and ever-evolving tech
+					industry, applying my skills to solve real-world problems.
 				</p>
 				<div className='lg:mt-10'>
 					<SocialMedia />
@@ -43,7 +44,7 @@ export default function Hero() {
 				<img
 					src={girl}
 					alt='girl with laptop'
-					className='sm:w-[539px] xl:w-630'
+					className='sm:w-[539px] xl:w-630 max-h-[750px]'
 				/>
 			</div>
 		</div>

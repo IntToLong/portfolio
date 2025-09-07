@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 
 import SocialCard from '../Hero/SocialCard';
 import Input from './Input';
@@ -16,25 +17,25 @@ export default function Form() {
 	const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
-		// if (form.current) {
-		// 	emailjs
-		// 		.sendForm(
-		// 			import.meta.env.VITE_SERVICE_ID,
-		// 			import.meta.env.VITE_TEMPLATE_ID,
-		// 			form.current,
-		// 			{
-		// 				publicKey: import.meta.env.VITE_PUBLIC_KEY,
-		// 			}
-		// 		)
-		// 		.then(
-		// 			() => {
-		// 				console.log('SUCCESS!');
-		// 			},
-		// 			(error) => {
-		// 				console.log('FAILED...', error.text);
-		// 			}
-		// 		);
-		// }
+		if (form.current) {
+			emailjs
+				.sendForm(
+					import.meta.env.VITE_SERVICE_ID,
+					import.meta.env.VITE_TEMPLATE_ID,
+					form.current,
+					{
+						publicKey: import.meta.env.VITE_PUBLIC_KEY,
+					}
+				)
+				.then(
+					() => {
+						console.log('SUCCESS!');
+					},
+					(error) => {
+						console.log('FAILED...', error.text);
+					}
+				);
+		}
 	};
 
 	return (
@@ -44,7 +45,7 @@ export default function Form() {
 			className='flex flex-col gap-5 w-full'>
 			<Input
 				type='text'
-				placeholder='Your name'
+				placeholder='Name'
 				name='name'
 			/>
 			<Input
@@ -65,7 +66,7 @@ export default function Form() {
 				placeholder='Write your message'
 				rows={5}
 				required></textarea>
-			<div className='flex justify-between gap-5'>
+			<div className='flex flex-col md:flex-row justify-between gap-5'>
 				<button
 					type='submit'
 					onClick={() => setClicked(true)}
@@ -73,11 +74,11 @@ export default function Form() {
 					Get In Touch
 					<PlaneIcon
 						className={`fill-primary-black absolute right-0 top-0 transition-all duration-300 opacity-0 ${
-							clicked ? 'animate-fly ease-linear' : ''
+							clicked ? ':animate-fly ease-linear' : ''
 						}`}
 					/>
 				</button>
-				<div className='flex justify-evenly gap-5'>
+				<div className='flex md:justify-evenly gap-3 md:gap-5'>
 					<SocialCard path='https://www.linkedin.com/in/nataliia-luibynets/'>
 						<LinkedinIcon className='group-hover:fill-primary-white w-5 h-5 ' />
 					</SocialCard>

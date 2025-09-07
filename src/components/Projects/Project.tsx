@@ -1,10 +1,9 @@
 import { HTMLAttributes } from 'react';
 import LinkIcon from '../../assets/link.svg?react';
+import GitHubIcon from '../../assets/social/github.svg?react';
 import { ProjectType } from '../../types/project';
 
-type ProjectProps = ProjectType & {
-	styles: string;
-} & HTMLAttributes<HTMLDivElement>;
+type ProjectProps = ProjectType & HTMLAttributes<HTMLDivElement>;
 
 export default function Project({
 	imgSrc,
@@ -12,54 +11,54 @@ export default function Project({
 	number,
 	title,
 	description,
-	path,
+	demo,
+	github,
 	technologies,
-	styles,
 	...props
 }: ProjectProps) {
-	const defaultStyles =
-		'flex flex-col gap-7 mb-7 md:gap-10 lg:gap-20 my-10 md:my-20';
-	let currentStyles = styles
-		? defaultStyles + ' ' + styles
-		: defaultStyles + ' ' + 'md:flex-row';
-	
 	return (
 		<article
 			{...props}
-			className={currentStyles}>
-			<div className='w-full h-[400px] md:h-[500px] md:w-1/2 overflow-hidden rounded-[19px] md:shadow-custom hover:scale-105 transition-all duration-300 ease-in'>
-				<a
-					href={path}
-					target='_blank'
-					rel='noopener noreferrer'>
-					<img
-						className='object-cover object-left w-full block grayscale hover:grayscale-0 rounded-[19px] md:object-top md:object-cover h-full '
-						src={imgSrc}
-						alt={imgAlt}
-					/>
-				</a>
-			</div>
-			<div className='flex flex-col gap-7 md:w-1/2'>
-				<h2 className='font-extrabold text-2xl/[117%] md:text-5xl/[117%] tracking-tight'>
+			className='flex flex-col items-start gap-10 border-2 rounded-lg p-3 md:p-10 xl:p-20 bg-primary-black text-primary-white flex-grow hover:scale-95 transition-all duration-500'>
+			<div className='flex flex-col gap-10'>
+				<p className='font-extrabold text-2xl md:text-4xl text-neutral-900 text-primary-white'>
 					{number < 10 ? `0${number}` : number}
-				</h2>
-				<h3 className='font-extrabold text-xl/[117%] tracking-tight md:text-[32px]/[117%]'>
+				</p>
+				<h3 className='font-extrabold text-xl md:text-3xl text-neutral-800 tracking-tight text-primary-white'>
 					{title}
 				</h3>
-				<p>{description}</p>
-				<div>
-					<span className='font-extrabold'>Technologies:</span>
-					<ul className='list-none flex gap-5'>
-						{technologies.map((tech: string, index: number) => {
-							return <li key={index}>{tech}</li>;
-						})}
-					</ul>
-				</div>
+			</div>
+			<p className='leading-relaxed text-zinc-300 flex-grow'>
+				{description}
+			</p>
+
+			<div className='flex flex-col gap-2'>
+				<span className='font-extrabold'>Technologies:</span>
+				<ul className='flex flex-wrap gap-2'>
+					{technologies.map((tech: string, index: number) => (
+						<li
+							key={index}
+							className='px-3 py-1 rounded-full bg-neutral-100 text-neutral-700 text-sm font-medium shadow-sm'>
+							{tech}
+						</li>
+					))}
+				</ul>
+			</div>
+			<div className='flex gap-4 pt-2'>
 				<a
-					href={path}
+					href={demo}
 					target='_blank'
-					rel='noopener noreferrer'>
-					<LinkIcon />
+					rel='noopener noreferrer'
+					className='p-2 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors'>
+					<LinkIcon className='w-6 h-6 text-neutral-800' />
+				</a>
+
+				<a
+					href={github}
+					target='_blank'
+					rel='noopener noreferrer'
+					className='p-2 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors'>
+					<GitHubIcon className='w-6 h-6 text-neutral-800' />
 				</a>
 			</div>
 		</article>

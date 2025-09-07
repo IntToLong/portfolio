@@ -4,6 +4,7 @@ export type ProjectType = {
 	number: number;
 	title: string;
 	description: string;
-	path: string;
+	demo: string;
+	github: string;
 	technologies: string[];
 };
