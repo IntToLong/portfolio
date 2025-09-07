@@ -43,18 +43,34 @@ body {
 	--shadow-bottom: 4px 4px 0px #000;
 }
 
+@theme {
+	--animate-fly: fly 2s ease-in-out infinite;
+	@keyframes fly {
+		from {
+			opacity: 1;
+			transform: translate(0, 0) rotate(0deg);
+		}
+
+		to {
+			opacity: 0;
+			transform: translate(300px, -400px) rotate(10deg);
+		}
+	}
+}
+
 @utility flex-center {
 	@apply flex justify-center items-center;
 }
 
 @utility text-stroke-* {
 	-webkit-text-stroke-width: calc(--value(integer) * 1px);
-	-webkit-text-stroke-color: --value(--color-*);
-	-webkit-text-stroke-color: --value([*]);
+	-webkit-text-stroke-color: --value(--color- *);
+	-webkit-text-stroke-color: --value([ *]);
 }
 
 @utility shadow-custom {
-	box-shadow: 0 12px 42px -4px rgba(24, 39, 75, 0.12), 0 8px 18px -6px rgba(24, 39, 75, 0.12);
+	box-shadow: 0 12px 42px -4px rgba(24, 39, 75, 0.12),
+		0 8px 18px -6px rgba(24, 39, 75, 0.12);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
