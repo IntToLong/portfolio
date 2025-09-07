@@ -1,7 +1,7 @@
 //Code by Olivier Larose
 //https://www.youtube.com/watch?v=E6PZvwITeU4
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 export default function Cursor() {
@@ -23,8 +23,8 @@ export default function Cursor() {
 	function animate() {
 		const { x, y } = delayedMouse.current;
 		delayedMouse.current = {
-			x: lerp(x, mouse.current.x, 0.06),
-			y: lerp(y, mouse.current.y, 0.06),
+			x: lerp(x, mouse.current.x, 0.085),
+			y: lerp(y, mouse.current.y, 0.085),
 		};
 		window.requestAnimationFrame(animate);
 		moveCircle(delayedMouse.current.x, delayedMouse.current.y);
