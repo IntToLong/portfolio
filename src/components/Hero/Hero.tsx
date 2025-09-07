@@ -1,5 +1,6 @@
 import SocialMedia from './SocialMedia';
 import girl from '../../assets/girlWithLaptop.svg';
+import { TypeAnimation } from 'react-type-animation';
 
 export default function Hero() {
 	return (
@@ -8,7 +9,13 @@ export default function Hero() {
 				<div className='flex flex-col gap-3 lg:gap-5 text-[28px]/[114%] lg:text-5xl/[117%] tracking-tight'>
 					<h2>
 						<span>Hello, I`am</span>{' '}
-						<span className='font-extrabold'>Natalia.</span>{' '}
+						<TypeAnimation
+							sequence={['Nataliia', 1000, '', 1000, 'Nataliia.', 1000]}
+							wrapper='span'
+							speed={50}
+							style={{ fontWeight: 800, display: 'inline-block' }}
+							repeat={0}
+						/>
 					</h2>
 					<p>
 						<span className='font-extrabold'>Frontend </span>
