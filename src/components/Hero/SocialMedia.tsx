@@ -16,7 +16,7 @@ export default function SocialMedia() {
 			<SocialCard path='https://inttolong.github.io/Resume/'>
 				<FacebookIcon className='group-hover:fill-primary-white w-5 h-5 md:w-10 md:h-10' />
 			</SocialCard>
-			<SocialCard path='#contact'>
+			<SocialCard path='https://mail.google.com/mail/?view=cm&fs=1&to=liubynets.nataliia@gmail.com&su=Connect%20Request&body=Hi%2C%20Nataliia%21'>
 				<GmailIcon className='group-hover:fill-primary-white w-5 h-5 md:w-10 md:h-10' />
 			</SocialCard>
 		</div>

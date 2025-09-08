@@ -37,7 +37,10 @@ export default function Contact() {
 						</p>
 						<p className='flex items-center hover:pl-3 transition-all duration-300'>
 							<EmailIcon className='w-5 h-5 mr-3' />
-							<a href='mailto:liubynets.nataliia@gmail.com'>
+							<a
+								href='https://mail.google.com/mail/?view=cm&fs=1&to=liubynets.nataliia@gmail.com&su=Connect%20Request&body=Hi%2C%20Nataliia%21'
+								target='_blank'
+								rel='noopener noreferrer'>
 								liubynets.nataliia@gmail.com
 							</a>
 						</p>

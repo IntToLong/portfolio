@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef} from 'react';
 import emailjs from '@emailjs/browser';
 import SocialCard from '../Hero/SocialCard';
 import Input from './Input';
@@ -6,12 +6,12 @@ import FacebookIcon from '../../assets/social/facebook.svg?react';
 import LinkedinIcon from '../../assets/social/linkedin.svg?react';
 import DiscordIcon from '../../assets/social/discord.svg?react';
 import GitHubIcon from '../../assets/social/github.svg?react';
-import PlaneIcon from '../../assets/paperPlane.svg?react';
+//import PlaneIcon from '../../assets/paperPlane.svg?react';
 import { useCursorHover } from '../../hooks/useCursorHover';
-import Modal from '../UI/Modal';
+//import Modal from '../UI/Modal';
 
 export default function Form() {
-	const [clicked, setClicked] = useState(false);
+	//const [clicked, setClicked] = useState(false);
 	const form = useRef<HTMLFormElement>(null)!;
 	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 
@@ -72,14 +72,14 @@ export default function Form() {
 			<div className='flex flex-col md:flex-row justify-between gap-5'>
 				<button
 					type='submit'
-					onClick={() => setClicked(true)}
+					//onClick={() => setClicked(true)}
 					className='group px-4 py-3 rounded md:border-2 text-primary-white font-semibold bg-primary-black w-[153px] xl:w-44 h-14 gap-2 hover:bg-primary-neutral active:text-primary-black active:bg-primary-white active:shadow-bottom flex-center cursor-pointer relative'>
 					Get In Touch
-					<PlaneIcon
+					{/* <PlaneIcon
 						className={`fill-primary-black absolute right-0 top-0 transition-all duration-300 opacity-0 ${
 							clicked ? ':animate-fly ease-linear' : ''
 						}`}
-					/>
+					/> */}
 				</button>
 				<div className='flex md:justify-evenly gap-3 md:gap-5'>
 					<SocialCard path='https://www.linkedin.com/in/nataliia-luibynets/'>
