@@ -1,6 +1,7 @@
 import { HTMLAttributes } from 'react';
 import LinkIcon from '../../assets/link.svg?react';
 import GitHubIcon from '../../assets/social/github.svg?react';
+import { useCursorHover } from '../../hooks/useCursorHover';
 import { ProjectType } from '../../types/project';
 
 type ProjectProps = ProjectType & HTMLAttributes<HTMLDivElement>;
@@ -16,10 +17,11 @@ export default function Project({
 	technologies,
 	...props
 }: ProjectProps) {
+	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 	return (
 		<article
 			{...props}
-			className='flex flex-col items-start gap-10 border-2 rounded-lg p-3 md:p-10 xl:p-20 bg-primary-black text-primary-white flex-grow hover:scale-[1.02] transition-all duration-100'>
+			className='flex flex-col items-start gap-10 border-2 rounded-lg p-3 md:p-10 xl:p-20 bg-primary-black text-primary-white flex-grow'>
 			<div className='flex flex-col gap-10'>
 				<p className='font-extrabold text-2xl md:text-4xl text-neutral-900 text-primary-white'>
 					{number < 10 ? `0${number}` : number}
@@ -28,7 +30,10 @@ export default function Project({
 					{title}
 				</h3>
 			</div>
-			<p className='leading-relaxed text-zinc-300 flex-grow'>
+			<p
+				className='leading-relaxed text-zinc-300 flex-grow'
+				onMouseEnter={() => handleMouseEnter(150)}
+				onMouseLeave={() => handleMouseLeave(40)}>
 				{description}
 			</p>
 

@@ -7,10 +7,13 @@ import LinkedinIcon from '../../assets/social/linkedin.svg?react';
 import DiscordIcon from '../../assets/social/discord.svg?react';
 import GitHubIcon from '../../assets/social/github.svg?react';
 import PlaneIcon from '../../assets/paperPlane.svg?react';
+import { useCursorHover } from '../../hooks/useCursorHover';
+import Modal from '../UI/Modal';
 
 export default function Form() {
 	const [clicked, setClicked] = useState(false);
 	const form = useRef<HTMLFormElement>(null)!;
+	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 
 	const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
@@ -58,12 +61,14 @@ export default function Form() {
 				name='title'
 			/>
 			<textarea
-				className='w-full placeholder: text-zinc-700 text-base/[125%] tracking-tight rounded py-4 px-6 border-2 border-primary-black'
+				className='w-full placeholder:text-zinc-300 text-zinc-400 text-base/[125%] tracking-tight rounded py-4 px-6 border-2 border-primary-black'
 				id='description'
 				name='message'
 				placeholder='Write your message'
 				rows={5}
-				required></textarea>
+				required
+				onMouseEnter={() => handleMouseEnter(30, 'primary-black')}
+				onMouseLeave={() => handleMouseLeave(30, 'primary-white')}></textarea>
 			<div className='flex flex-col md:flex-row justify-between gap-5'>
 				<button
 					type='submit'
@@ -91,6 +96,7 @@ export default function Form() {
 					</SocialCard>
 				</div>
 			</div>
+			{/* <Modal open={clicked}>Message is sent!</Modal> */}
 		</form>
 	);
 }

@@ -1,18 +1,26 @@
 import Form from './Form';
 import EmailIcon from '../../assets/email.svg?react';
+import { useCursorHover } from '../../hooks/useCursorHover';
 
 export default function Contact() {
+	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 	return (
 		<>
 			<section className='bg-primary-black text-primary-black h-20 md:h-25'></section>
 			<section
 				id='contact'
 				className='px-4 sm:px-6 md:px-10 lg:px-20 xl:px-28 md:my-20 my-10'>
-				<h2 className='text-[28px]/[114%] lg:text-5xl/[117%] tracking-tight mb-10 text-primary-black text-center'>
+				<h2
+					className='text-[28px]/[114%] lg:text-5xl/[117%] tracking-tight mb-10 text-primary-black text-center'
+					onMouseEnter={() => handleMouseEnter(0)}
+					onMouseLeave={() => handleMouseLeave(40)}>
 					<span className='pr-4'>Contact</span>{' '}
 					<span className='font-extrabold'>Me</span>
 				</h2>
-				<div className='md:flex md:flex-row-reverse md:gap-15 xl:gap-28 md:items-center'>
+				<div
+					className='md:flex md:flex-row-reverse md:gap-15 xl:gap-28 md:items-center'
+					onMouseEnter={() => handleMouseEnter(0)}
+					onMouseLeave={() => handleMouseLeave(40)}>
 					<div className='flex flex-col gap-8 my-8 w-full'>
 						<h2 className='font-extrabold text-[28px]/[114%] tracking-tight lg:text-5xl/[117%]'>
 							Let`s

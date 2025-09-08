@@ -1,5 +1,8 @@
 import girl from '../../assets/girl.svg';
+import { useCursorHover } from '../../hooks/useCursorHover';
+
 export default function AboutMe() {
+	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 	return (
 		<section
 			className='p-4 sm:p-6 md:p-20 lg:px-28 flex flex-col lg:flex-row gap-10 my-10 bg-primary-black'
@@ -15,7 +18,10 @@ export default function AboutMe() {
 					<span className='pr-4'>About</span>{' '}
 					<span className='font-extrabold'>Me</span>
 				</h3>
-				<article className='text-zinc-300 flex flex-col gap-4'>
+				<article
+					className='text-zinc-300 flex flex-col gap-4'
+					onMouseEnter={() => handleMouseEnter(150)}
+					onMouseLeave={() => handleMouseLeave(40)}>
 					<p>
 						I am a highly motivated and detail-oriented Entry-Level Front-End
 						Developer with a strong passion for building modern and responsive
@@ -40,7 +46,12 @@ export default function AboutMe() {
 					</p>
 					<p>
 						Beyond my technical skills, I am a committed problem-solver with a
-						strong analytical mindset, honed during my academic studies. I have applied this disciplined approach to my projects, such as QuickQuiz AI, a responsive application that leverages Gemini AI, and the Ukrify Chrome Extension, which enhances productivity for bilingual users. These projects demonstrate my ability to translate complex ideas into functional, clean, and intuitive digital products.
+						strong analytical mindset, honed during my academic studies. I have
+						applied this disciplined approach to my projects, such as QuickQuiz
+						AI, a responsive application that leverages Gemini AI, and the
+						Ukrify Chrome Extension, which enhances productivity for bilingual
+						users. These projects demonstrate my ability to translate complex
+						ideas into functional, clean, and intuitive digital products.
 					</p>
 				</article>
 			</div>

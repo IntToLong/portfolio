@@ -1,11 +1,12 @@
 //Code by Olivier Larose
 //https://www.youtube.com/watch?v=E6PZvwITeU4
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, use } from 'react';
 import gsap from 'gsap';
+import CursorContext from '../../contexts/CursorContext';
 
 export default function Cursor() {
-	const size = 40;
+	const { size, color } = use(CursorContext);
 	const circle = useRef<HTMLDivElement>(null);
 	const mouse = useRef({ x: 0, y: 0 });
 
@@ -23,8 +24,8 @@ export default function Cursor() {
 	function animate() {
 		const { x, y } = delayedMouse.current;
 		delayedMouse.current = {
-			x: lerp(x, mouse.current.x, 0.085),
-			y: lerp(y, mouse.current.y, 0.085),
+			x: lerp(x, mouse.current.x, 0.095),
+			y: lerp(y, mouse.current.y, 0.095),
 		};
 		window.requestAnimationFrame(animate);
 		moveCircle(delayedMouse.current.x, delayedMouse.current.y);
@@ -34,7 +35,6 @@ export default function Cursor() {
 		const { clientX, clientY } = event;
 		mouse.current = { x: clientX, y: clientY };
 	}
-
 
 	useEffect(() => {
 		animate();
@@ -46,7 +46,7 @@ export default function Cursor() {
 	return (
 		<div
 			ref={circle}
-			className='fixed top-0 left-0 bg-primary-white rounded-full mix-blend-exclusion'
+			className={`fixed top-0 left-0 bg-${color} rounded-full mix-blend-exclusion transition-all duration-100 pointer-events-none`}
 			style={{ width: size, height: size }}></div>
 	);
 }

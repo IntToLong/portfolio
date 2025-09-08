@@ -1,13 +1,17 @@
 import SocialMedia from './SocialMedia';
 import girl from '../../assets/girlWithLaptop.svg';
 import { TypeAnimation } from 'react-type-animation';
+import { useCursorHover } from '../../hooks/useCursorHover';
 
 export default function Hero() {
+	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 	return (
 		<div className='px-4 sm:px-6 md:px-20 lg:px-28 flex-center flex-col-reverse md:flex-row  justify-evenly md:mb-15 md:mt-10'>
 			<section className='flex flex-col gap-8 md:w-1/2'>
 				<div className='flex flex-col gap-3 lg:gap-5 text-[28px]/[114%] lg:text-5xl/[117%] tracking-tight'>
-					<h2>
+					<h1
+						onMouseEnter={() => handleMouseEnter(0)}
+						onMouseLeave={() => handleMouseLeave(40)}>
 						<span>Hello, I`am</span>{' '}
 						<TypeAnimation
 							sequence={['Nataliia', 1000, '', 1000, 'Nataliia', 1000]}
@@ -16,14 +20,21 @@ export default function Hero() {
 							style={{ fontWeight: 800, display: 'inline-block' }}
 							repeat={0}
 						/>
-					</h2>
+					</h1>
 					<p>
-						<span className='font-extrabold'>Frontend </span>
+						<span
+							className='font-extrabold'
+							onMouseEnter={() => handleMouseEnter(0)}
+							onMouseLeave={() => handleMouseLeave(40)}>
+							Frontend{' '}
+						</span>
 						<span className='text-primary-white text-stroke-1 text-stroke-primary-black font-extrabold'>
 							Developer
 						</span>
 					</p>
-					<p>
+					<p
+						onMouseEnter={() => handleMouseEnter(0)}
+						onMouseLeave={() => handleMouseLeave(40)}>
 						<span>Based In </span>
 						<span className='font-extrabold'>Poland.</span>
 					</p>

@@ -1,12 +1,17 @@
 import { projectsData } from '../../constants';
+import { useCursorHover } from '../../hooks/useCursorHover';
 import Project from './Project';
 
 export default function Projects() {
+	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 	return (
 		<section
 			className='px-4 sm:px-6 md:px-15 xl:px-28 my-5 sm:my-10 md:my-20'
 			id='projects'>
-			<h2 className='text-center text-[28px]/[114%] lg:text-[48px]/[114%] tracking-tight mb-10'>
+			<h2
+				className='text-center text-[28px]/[114%] lg:text-[48px]/[114%] tracking-tight mb-10'
+				onMouseEnter={() => handleMouseEnter(0)}
+				onMouseLeave={() => handleMouseLeave(40)}>
 				<span className='pr-4'>My</span>
 				<span className='font-extrabold'>Projects</span>
 			</h2>
