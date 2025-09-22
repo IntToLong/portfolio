@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react';
+import { motion } from 'motion/react';
 import LinkIcon from '../../assets/link.svg?react';
 import GitHubIcon from '../../assets/social/github.svg?react';
 import { useCursorHover } from '../../hooks/useCursorHover';
@@ -19,7 +20,11 @@ export default function Project({
 }: ProjectProps) {
 	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 	return (
-		<article
+		<motion.article
+			initial={{ y: 100, opacity: 0 }}
+			whileInView={{ y: 0, opacity: 1 }}
+			transition={{ duration: 3, type: 'spring' }}
+			viewport={{ once: true }}
 			{...props}
 			className='flex flex-col items-start gap-10 border-2 rounded-lg p-3 md:p-10 xl:p-20 bg-primary-black text-primary-white flex-grow'>
 			<div className='flex flex-col gap-10'>
@@ -66,6 +71,6 @@ export default function Project({
 					<GitHubIcon className='w-6 h-6 text-neutral-800' />
 				</a>
 			</div>
-		</article>
+		</motion.article>
 	);
 }

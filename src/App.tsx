@@ -12,9 +12,9 @@ import CursorProvider from './contexts/CursorProvider';
 function App() {
 	return (
 		<CursorProvider>
-			<div className='grid h-screen grid-rows-[100px_1fr_100px]'>
+			<div className='grid min-h-screen grid-rows-[auto_1fr_auto]'>
 				<Header />
-				<main>
+				<main className='overflow-x-hidden'>
 					<Hero />
 					<Skills />
 					<AboutMe />

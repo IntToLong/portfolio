@@ -6,7 +6,7 @@ export default function Projects() {
 	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 	return (
 		<section
-			className='px-4 sm:px-6 md:px-15 xl:px-28 my-5 sm:my-10 md:my-20'
+			className='px-4 sm:px-6 md:px-15 xl:px-28 my-5 sm:py-10 md:my-20'
 			id='projects'>
 			<h2
 				className='text-center text-[28px]/[114%] lg:text-[48px]/[114%] tracking-tight mb-10'

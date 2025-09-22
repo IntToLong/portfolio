@@ -2,23 +2,30 @@ import SocialMedia from './SocialMedia';
 import girl from '../../assets/girlWithLaptop.svg';
 import { TypeAnimation } from 'react-type-animation';
 import { useCursorHover } from '../../hooks/useCursorHover';
+import { motion } from 'motion/react';
 
 export default function Hero() {
 	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 	return (
 		<div className='px-4 sm:px-6 md:px-20 lg:px-28 flex-center flex-col-reverse md:flex-row  justify-evenly md:mb-15 md:mt-10'>
-			<section className='flex flex-col gap-8 md:w-1/2'>
+			<motion.section
+				className='flex flex-col gap-8 md:w-1/2'
+				initial={{ x: -200, opacity: 0 }}
+				whileInView={{ x: 0, opacity: 1 }}
+				transition={{ duration: 3, type: 'spring' }}
+				viewport={{ once: true }}>
 				<div className='flex flex-col gap-3 lg:gap-5 text-[28px]/[114%] lg:text-5xl/[117%] tracking-tight'>
 					<h1
 						onMouseEnter={() => handleMouseEnter(0)}
 						onMouseLeave={() => handleMouseLeave(40)}>
 						<span>Hello, I`am</span>{' '}
 						<TypeAnimation
-							sequence={['Nataliia', 1000, '', 1000, 'Nataliia', 1000]}
+							sequence={['Junior', 3000, '', 1000, 'Nataliia', 1000]}
 							wrapper='span'
 							speed={50}
 							style={{ fontWeight: 800, display: 'inline-block' }}
 							repeat={0}
+							preRenderFirstString={true}
 						/>
 					</h1>
 					<p>
@@ -49,15 +56,20 @@ export default function Hero() {
 				<div className='lg:mt-10'>
 					<SocialMedia />
 				</div>
-			</section>
+			</motion.section>
 
-			<div className='md:w-1/2 flex-center'>
+			<motion.div
+				className='md:w-1/2 flex-center'
+				initial={{ x: 200, opacity: 0 }}
+				whileInView={{ opacity: 1, x: 0 }}
+				transition={{ duration: 3, type: 'spring' }}
+				viewport={{ once: true }}>
 				<img
 					src={girl}
 					alt='girl with laptop'
 					className='sm:w-[539px] xl:w-630 max-h-[750px]'
 				/>
-			</div>
+			</motion.div>
 		</div>
 	);
 }

@@ -12,11 +12,13 @@ export default function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
 	));
 
 	return (
-		<ul
-			className={`md:flex md:flex-row ${
-				isMenuOpen ? 'flex flex-col mt-30' : 'hidden'
-			} gap-8 text-[16px]/[20px]`}>
-			{links}
-		</ul>
+		<nav className={`${isMenuOpen ? 'block' : 'hidden'} md:block`}>
+			<ul
+				className={`md:flex md:flex-row ${
+					isMenuOpen ? 'flex flex-col mt-30' : 'hidden'
+				} gap-8 text-[16px]/[20px]`}>
+				{links}
+			</ul>
+		</nav>
 	);
 }

@@ -1,15 +1,17 @@
 import Form from './Form';
 import EmailIcon from '../../assets/email.svg?react';
 import { useCursorHover } from '../../hooks/useCursorHover';
+import { motion } from 'motion/react';
 
 export default function Contact() {
 	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
+
 	return (
 		<>
 			<section className='bg-primary-black text-primary-black h-20 md:h-25'></section>
 			<section
 				id='contact'
-				className='px-4 sm:px-6 md:px-10 lg:px-20 xl:px-28 md:my-20 my-10'>
+				className='px-4 sm:px-6 md:px-10 lg:px-20 xl:px-28 md:my-20 my-10 relative'>
 				<h2
 					className='text-[28px]/[114%] lg:text-5xl/[117%] tracking-tight mb-10 text-primary-black text-center'
 					onMouseEnter={() => handleMouseEnter(0)}
@@ -22,14 +24,18 @@ export default function Contact() {
 					onMouseEnter={() => handleMouseEnter(0)}
 					onMouseLeave={() => handleMouseLeave(40)}>
 					<div className='flex flex-col gap-8 my-8 w-full'>
-						<h2 className='font-extrabold text-[28px]/[114%] tracking-tight lg:text-5xl/[117%]'>
+						<motion.h2
+							className='font-extrabold text-[28px]/[114%] tracking-tight lg:text-5xl/[117%]'
+							initial={{ y: 50, opacity: 0 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 1, type: 'spring' }}>
 							Let`s
 							<span className='text-stroke-1 text-stroke-primary-black text-primary-white px-3'>
 								talk
 							</span>
 							for
 							<br /> Something special
-						</h2>
+						</motion.h2>
 						<p className='text-base/[150%] text-zinc-500'>
 							I`m currently looking for new opportunities, my inbox always open.
 							Whether you have a question or just want to say hi, I`ll try my

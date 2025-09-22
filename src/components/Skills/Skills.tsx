@@ -12,12 +12,12 @@ import SkillCard from './SkillCard';
 
 export default function Skills() {
 	return (
-		<section className='my-20 px-4 sm:px-6 md:px-20 lg:px-28 2xl:px-36' id='skills'>
+		<section className='my-20 py-10 px-4 sm:px-6 md:px-20 lg:px-28 2xl:px-36' id='skills'>
 			<h2 className='text-center text-[28px]/[114%] lg:text-[48px]/[114%] tracking-tight mb-10'>
 				<span className='pr-4'>My</span>
 				<span className='font-extrabold'>Skills</span>
 			</h2>
-			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center gap-5 md:gap-5 lg:gap-12'>
+			<ul className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center gap-5 md:gap-5 lg:gap-12'>
 				<SkillCard title='HTML5'>
 					<HtmlIcon className='group-hover:fill-primary-white' />
 				</SkillCard>
@@ -48,7 +48,7 @@ export default function Skills() {
 				<SkillCard title='GIT'>
 					<GitIcon className='group-hover:fill-primary-white' />
 				</SkillCard>
-			</div>
+			</ul>
 		</section>
 	);
 }

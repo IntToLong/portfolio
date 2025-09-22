@@ -17,7 +17,7 @@ select:-webkit-autofill:focus {
 }
 
 html {
-	scroll-behavior: smooth;
+	scroll-behavior: smooth !important;
 }
 
 body {
