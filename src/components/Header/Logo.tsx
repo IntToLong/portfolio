@@ -3,7 +3,7 @@ export default function Logo({ color }: { color: string }) {
     <div
       className="flex-center cursor-pointer transition-all duration-300 ease-in hover:scale-125"
       onClick={() => {
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }}
     >
       <svg

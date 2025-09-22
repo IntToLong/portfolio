@@ -4,7 +4,7 @@ export default function ResumeLink({ isMenuOpen }: { isMenuOpen: boolean }) {
       href="https://inttolong.github.io/Resume/"
       target="_blank"
       rel="noopener noreferrer"
-      className={`group text-primary-white bg-primary-black hover:bg-primary-neutral hover:text-primary-black hover:bg-primary-white hover:shadow-bottom md:flex-center h-14 w-[153px] gap-2 rounded px-4 py-3 transition-all active:translate-y-1 md:border-2 ${isMenuOpen ? "flex-center" : "hidden"}`}
+      className={`group text-primary-white bg-primary-black hover:text-primary-black hover:bg-primary-white hover:shadow-bottom md:flex-center h-14 w-[153px] gap-2 rounded px-4 py-3 transition-all active:translate-y-1 md:border-2 ${isMenuOpen ? "flex-center" : "hidden"}`}
     >
       <span className="text-[16px]/[20px] font-semibold lg:text-xl/[120%]">
         Resume

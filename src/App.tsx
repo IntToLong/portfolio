@@ -7,6 +7,7 @@ import Hero from "./components/Hero/Hero";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 import Cursor from "./components/UI/Cursor";
+import UpButton from "./components/UI/UpButton";
 import CursorProvider from "./contexts/CursorProvider";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <AboutMe />
           <Projects />
           <Contact />
+          <UpButton />
         </main>
         <Footer />
       </div>
