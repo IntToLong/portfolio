@@ -12,7 +12,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 1px solid #676666;
+  border-color: #000;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -22,8 +22,14 @@ html {
 
 body {
   font-family: "Sora", sans-serif;
-  /* background-color: #fefefe; */
-  /* background-color: #f0f0f0; */
+}
+
+input,
+select,
+optgroup,
+textarea,
+::file-selector-button {
+  background-color: #fff;
 }
 
 @theme {

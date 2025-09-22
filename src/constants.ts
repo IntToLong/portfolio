@@ -1,5 +1,7 @@
 import { ProjectType } from "./types/project";
 
+export const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 export const linksInfo = [
   { title: "About", path: "#about" },
   { title: "Skills", path: "#skills" },

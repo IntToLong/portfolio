@@ -11,21 +11,13 @@ export default function Contact() {
       <section className="bg-primary-black text-primary-black h-20 md:h-25"></section>
       <section
         id="contact"
-        className="relative my-10 px-4 sm:px-6 md:my-20 md:px-10 lg:px-20 xl:px-28"
+        className="bg-primary-white relative px-4 py-10 sm:px-6 md:px-10 md:py-20 lg:px-20 xl:px-28"
       >
-        <h2
-          className="text-primary-black mb-10 text-center text-[28px]/[114%] tracking-tight lg:text-5xl/[117%]"
-          onMouseEnter={() => handleMouseEnter(0)}
-          onMouseLeave={() => handleMouseLeave(40)}
-        >
+        <h2 className="text-primary-black mb-10 text-center text-[28px]/[114%] tracking-tight lg:text-5xl/[117%]">
           <span className="pr-4">Contact</span>{" "}
           <span className="font-extrabold">Me</span>
         </h2>
-        <div
-          className="md:flex md:flex-row-reverse md:items-center md:gap-15 xl:gap-28"
-          onMouseEnter={() => handleMouseEnter(0)}
-          onMouseLeave={() => handleMouseLeave(40)}
-        >
+        <div className="md:flex md:flex-row-reverse md:items-center md:gap-15 xl:gap-28">
           <div className="my-8 flex w-full flex-col gap-8">
             <motion.h2
               className="text-[28px]/[114%] font-extrabold tracking-tight lg:text-5xl/[117%]"

@@ -6,7 +6,7 @@ export default function AboutMe() {
   const { handleMouseEnter, handleMouseLeave } = useCursorHover();
   return (
     <section
-      className="bg-primary-black my-10 flex flex-col gap-10 p-4 sm:p-6 md:p-20 lg:flex-row lg:px-28"
+      className="bg-primary-black flex flex-col gap-10 p-4 sm:p-6 md:p-20 lg:flex-row lg:px-28"
       id="about"
     >
       <div className="flex-center lg:w-1/2">

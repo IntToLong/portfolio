@@ -4,12 +4,14 @@ export default function Input({
   type,
   placeholder,
   name,
-  required
+  required,
+  invalid
 }: {
   type: string;
   placeholder: string;
   name: string;
   required?: boolean;
+  invalid?: boolean;
 }) {
   const { handleMouseEnter, handleMouseLeave } = useCursorHover();
   return (
@@ -18,9 +20,9 @@ export default function Input({
       placeholder={placeholder}
       name={name}
       required={required}
-      className="border-primary-black h-14 w-full rounded border-2 px-6 py-4 text-base/[125%] tracking-tight text-zinc-400 placeholder:text-zinc-300"
-      onMouseEnter={() => handleMouseEnter(30, "primary-black")}
-      onMouseLeave={() => handleMouseLeave(30, "primary-white")}
+      className={`h-14 w-full rounded border-2 px-6 py-4 text-base/[125%] tracking-tight text-zinc-800 ${invalid ? "border-red-700 text-red-700 placeholder:text-red-700" : "border-primary-black text-zinc-800 placeholder:text-zinc-400"} transition-all duration-300 z-50`}
+      onMouseEnter={() => handleMouseEnter(40)}
+      onMouseLeave={() => handleMouseLeave(40)}
     />
   );
 }

@@ -6,18 +6,42 @@ import Modal from "../UI/Modal";
 import CheckIcon from "../../assets/check.svg?react";
 import ErrorIcon from "../../assets/error.svg?react";
 import FormActions from "./FormActions";
+import { emailRegex } from "../../constants";
 
 export default function Form() {
   const [isSent, setIsSent] = useState("");
   const [clicked, setClicked] = useState(false);
+  const [isInvalidMessage, setIsInvalidMessage] = useState(false);
+  const [isInvalidEmail, setIsInvalidEmail] = useState(false);
   const form = useRef<HTMLFormElement>(null)!;
   const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 
   const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setClicked(true);
+    setIsInvalidMessage(false);
+    setIsInvalidEmail(false);
+    const formElement = form.current as HTMLFormElement;
+    const formData = new FormData(formElement);
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+    console.log(message);
+    if (
+      !message.trim().length ||
+      !email.trim().length ||
+      !emailRegex.test(email)
+    ) {
+      if (!message.trim().length) {
+        setIsInvalidMessage(true);
+      }
+      if (!email.trim().length || !emailRegex.test(email)) {
+        setIsInvalidEmail(true);
+      }
+      setClicked(false);
+      return;
+    }
 
-    // if (form.current) {
+    // if (formElement) {
     // 	emailjs
     // 		.sendForm(
     // 			import.meta.env.VITE_SERVICE_ID,
@@ -45,17 +69,20 @@ export default function Form() {
       className="relative flex w-full flex-col gap-5"
     >
       <Input type="text" placeholder="Name" name="name" />
-      <Input type="email" placeholder="Email" name="email" required />
+      <Input
+        type="email"
+        placeholder="Email"
+        name="email"
+        invalid={isInvalidEmail}
+      />
       <Input type="text" placeholder="Subject" name="title" />
       <textarea
-        className="border-primary-black w-full rounded border-2 px-6 py-4 text-base/[125%] tracking-tight text-zinc-400 placeholder:text-zinc-300"
-        id="description"
+        className={`border-primary-black w-full rounded border-2 px-6 py-4 text-base/[125%] tracking-tight focus:text-zinc-800 ${isInvalidMessage ? "border-red-700 text-red-700 placeholder:text-red-700" : "border-primary-black text-zinc-800 placeholder:text-zinc-400"} transition-all duration-300`}
+        id="message"
         name="message"
         placeholder="Write your message"
         rows={5}
         required
-        onMouseEnter={() => handleMouseEnter(30, "primary-black")}
-        onMouseLeave={() => handleMouseLeave(30, "primary-white")}
       ></textarea>
       <FormActions clicked={clicked} sendEmail={sendEmail} />
       <Modal open={isSent} onClose={() => setIsSent("")}>

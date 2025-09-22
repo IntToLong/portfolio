@@ -1,6 +1,11 @@
 export default function Logo({ color }: { color: string }) {
   return (
-    <div className="flex-center cursor-pointer transition-all duration-300 ease-in hover:scale-125">
+    <div
+      className="flex-center cursor-pointer transition-all duration-300 ease-in hover:scale-125"
+      onClick={() => {
+        window.scrollTo(0, 0);
+      }}
+    >
       <svg
         width="55"
         height="55"
@@ -17,8 +22,6 @@ export default function Logo({ color }: { color: string }) {
           fill={color}
         />
       </svg>
-
-      {/* <p className='text-[16px]/[20px] font-semibold italic'>Portfolio</p> */}
     </div>
   );
 }

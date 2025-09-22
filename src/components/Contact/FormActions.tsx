@@ -17,7 +17,7 @@ export default function FormActions({
         type="submit"
         onClick={sendEmail}
         disabled={clicked}
-        className="group text-primary-white bg-primary-black hover:bg-primary-neutral active:text-primary-black active:bg-primary-white active:shadow-bottom flex-center disabled:text-primary-black disabled:bg-primary-white disabled:shadow-bottom relative h-14 w-[153px] cursor-pointer gap-2 rounded px-4 py-3 font-semibold md:border-2 xl:w-44"
+        className="group text-primary-white bg-primary-black hover:bg-primary-neutral hover:text-primary-black hover:bg-primary-white hover:shadow-bottom flex-center disabled:text-primary-black disabled:bg-primary-white disabled:shadow-bottom relative h-14 w-[153px] cursor-pointer gap-2 rounded px-4 py-3 font-semibold active:translate-y-1 md:border-2 xl:w-44 transition-all"
       >
         {clicked ? "Sending..." : "Get In Touch"}
       </button>

@@ -1,13 +1,11 @@
 import SocialMedia from "./SocialMedia";
 import girl from "../../assets/girlWithLaptop.svg";
 import { TypeAnimation } from "react-type-animation";
-import { useCursorHover } from "../../hooks/useCursorHover";
 import { motion } from "motion/react";
 
 export default function Hero() {
-  const { handleMouseEnter, handleMouseLeave } = useCursorHover();
   return (
-    <div className="flex-center flex-col-reverse justify-evenly px-4 sm:px-6 md:mt-10 md:mb-15 md:flex-row md:px-20 lg:px-28">
+    <div className="flex-center bg-primary-white flex-col-reverse justify-evenly px-4 sm:px-6 md:pt-10 md:pb-15 md:flex-row md:px-20 lg:px-28">
       <motion.section
         className="flex flex-col gap-8 md:w-1/2"
         initial={{ x: -200, opacity: 0 }}
@@ -16,10 +14,7 @@ export default function Hero() {
         viewport={{ once: true }}
       >
         <div className="flex flex-col gap-3 text-[28px]/[114%] tracking-tight lg:gap-5 lg:text-5xl/[117%]">
-          <h1
-            onMouseEnter={() => handleMouseEnter(0)}
-            onMouseLeave={() => handleMouseLeave(40)}
-          >
+          <h1>
             <span>Hello, I`am</span>{" "}
             <TypeAnimation
               sequence={["Junior", 3000, "", 1000, "Nataliia", 1000]}
@@ -31,21 +26,12 @@ export default function Hero() {
             />
           </h1>
           <p>
-            <span
-              className="font-extrabold"
-              onMouseEnter={() => handleMouseEnter(0)}
-              onMouseLeave={() => handleMouseLeave(40)}
-            >
-              Frontend{" "}
-            </span>
+            <span className="font-extrabold">Frontend </span>
             <span className="text-primary-white text-stroke-1 text-stroke-primary-black font-extrabold">
               Developer
             </span>
           </p>
-          <p
-            onMouseEnter={() => handleMouseEnter(0)}
-            onMouseLeave={() => handleMouseLeave(40)}
-          >
+          <p>
             <span>Based In </span>
             <span className="font-extrabold">Poland.</span>
           </p>

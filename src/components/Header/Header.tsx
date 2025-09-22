@@ -18,10 +18,9 @@ export default function Header() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  //fixed top-0 w-full
   return (
     <header
-      className={`bg-primary-white z-50 flex justify-between px-5 py-6 md:items-center md:px-20 lg:px-[112px] ${
+      className={`bg-primary-white z-10 flex justify-between px-5 py-6 md:items-center md:px-20 lg:px-[112px] ${
         isMenuOpen ? "h-screen flex-col justify-start gap-8 pl-20" : "h-auto"
       } transition-all duration-300`}
     >

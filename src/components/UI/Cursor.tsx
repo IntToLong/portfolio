@@ -46,7 +46,7 @@ export default function Cursor() {
   return (
     <div
       ref={circle}
-      className={`fixed top-0 left-0 bg-${color} pointer-events-none rounded-full mix-blend-exclusion transition-all duration-50`}
+      className={`fixed top-0 left-0 bg-${color} pointer-events-none rounded-full mix-blend-exclusion transition-all duration-50 z-30`}
       style={{ width: size, height: size }}
     ></div>
   );
