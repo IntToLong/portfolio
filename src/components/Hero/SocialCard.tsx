@@ -1,19 +1,20 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 export default function SocialCard({
-	path,
-	children,
+  path,
+  children
 }: {
-	path: string;
-	children?: ReactNode | undefined;
+  path: string;
+  children?: ReactNode | undefined;
 }) {
-	return (
-		<a
-			href={path}
-			className='w-12 h-12 md:w-auto md:h-auto flex-center group border-2 rounded p-1 md:p-4 bg-primary-white cursor-pointer hover:bg-primary-black transition-all duration-300 hover:scale-105 active:scale-90'
-			target='_blank'
-			rel='noopener noreferrer'>
-			{children}
-		</a>
-	);
+  return (
+    <a
+      href={path}
+      className="flex-center group bg-primary-white hover:bg-primary-black h-12 w-12 cursor-pointer rounded border-2 p-1 transition-all duration-300 hover:scale-105 active:scale-90 md:h-auto md:w-auto md:p-4"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {children}
+    </a>
+  );
 }

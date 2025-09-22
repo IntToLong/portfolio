@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap");
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /*fix autofill background*/
 input:-webkit-autofill,
@@ -12,100 +12,102 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-	border: 1px solid #676666;
-	transition: background-color 5000s ease-in-out 0s;
+  border: 1px solid #676666;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 html {
-	scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
 
 body {
-	font-family: 'Sora', sans-serif;
-	/* background-color: #fefefe; */
-	/* background-color: #f0f0f0; */
+  font-family: "Sora", sans-serif;
+  /* background-color: #fefefe; */
+  /* background-color: #f0f0f0; */
 }
 
 @theme {
-	--font-sora: 'Sora', sans-serif;
-	--font-outfit: 'Outfit', sans-serif;
+  --font-sora: "Sora", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
 
-	--color-error: #ef4444;
-	--color-primary-black: #000;
-	--color-primary-neutral: #404040;
-	--color-primary-white: #fff;
-	--color-zinc-100: #f4f4f5;
-	--color-zinc-200: #e4e4e7;
-	--color-zinc-300: #d4d4d8;
-	--color-zinc-500: #71717a;
-	--color-zinc-800: #27272a;
+  --color-error: #ef4444;
+  --color-primary-black: #000;
+  --color-primary-neutral: #404040;
+  --color-primary-white: #fff;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-500: #71717a;
+  --color-zinc-800: #27272a;
 
-	--shadow-bottom: 4px 4px 0px #000;
+  --shadow-bottom: 4px 4px 0px #000;
 }
 
 @theme {
-	--animate-fly: circle 10s ease-in-out infinite;
+  --animate-fly: circle 10s ease-in-out infinite;
 
-	@keyframes fly {
-		from {
-			opacity: 1;
-			transform: scale(0.3) translate(0, 0) rotate(0deg);
-		}
+  @keyframes fly {
+    from {
+      opacity: 1;
+      transform: scale(0.3) translate(0, 0) rotate(0deg);
+    }
 
-		to {
-			opacity: 0;
-			transform: scale(0.7) translate(300px, -400px) rotate(10deg);
-		}
-	}
+    to {
+      opacity: 0;
+      transform: scale(0.7) translate(300px, -400px) rotate(10deg);
+    }
+  }
 
-	@keyframes loop {
-		0% {
-			opacity: 1;
-			transform: scale(0.3) translate(0, 0) rotate(0deg);
-		}
-		25% {
-			transform: scale(0.4) translate(50px, -250px) rotate(-90deg);
-		}
-		,
-		50% {
-			transform: scale(0.5) translate(150px, -300px) rotate(-180deg);
-		}
-		75% {
-			transform: scale(0.6) translate(250px, -200px) rotate(-270deg);
-		}
-		,
-		100% {
-			opacity: 0;
-			transform: scale(0.7) translate(300px, -400px) rotate(10deg);
-		}
-	}
+  @keyframes loop {
+    0% {
+      opacity: 1;
+      transform: scale(0.3) translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: scale(0.4) translate(50px, -250px) rotate(-90deg);
+    }
+    ,
+    50% {
+      transform: scale(0.5) translate(150px, -300px) rotate(-180deg);
+    }
+    75% {
+      transform: scale(0.6) translate(250px, -200px) rotate(-270deg);
+    }
+    ,
+    100% {
+      opacity: 0;
+      transform: scale(0.7) translate(300px, -400px) rotate(10deg);
+    }
+  }
 
-	@keyframes circle {
-		0% {
-			opacity: 1;
-			transform: rotate(0deg) translateX(200px) translateY(400px) rotate(0deg);
-		}
+  @keyframes circle {
+    0% {
+      opacity: 1;
+      transform: rotate(0deg) translateX(200px) translateY(400px) rotate(0deg);
+    }
 
-		100% {
-			opacity: 1;
-			transform: rotate(360deg) translateX(100px) translateY(100px) rotate(-360deg);
-		}
-	}
+    100% {
+      opacity: 1;
+      transform: rotate(360deg) translateX(100px) translateY(100px)
+        rotate(-360deg);
+    }
+  }
 }
 
 @utility flex-center {
-	@apply flex justify-center items-center;
+  @apply flex items-center justify-center;
 }
 
 @utility text-stroke-* {
-	-webkit-text-stroke-width: calc(--value(integer) * 1px);
-	-webkit-text-stroke-color: --value(--color- *);
-	-webkit-text-stroke-color: --value([ *]);
+  -webkit-text-stroke-width: calc(--value(integer) * 1px);
+  -webkit-text-stroke-color: --value(--color-*);
+  -webkit-text-stroke-color: --value([*]);
 }
 
 @utility shadow-custom {
-	box-shadow: 0 12px 42px -4px rgba(24, 39, 75, 0.12),
-		0 8px 18px -6px rgba(24, 39, 75, 0.12);
+  box-shadow:
+    0 12px 42px -4px rgba(24, 39, 75, 0.12),
+    0 8px 18px -6px rgba(24, 39, 75, 0.12);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

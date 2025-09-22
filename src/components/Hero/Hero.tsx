@@ -1,75 +1,80 @@
-import SocialMedia from './SocialMedia';
-import girl from '../../assets/girlWithLaptop.svg';
-import { TypeAnimation } from 'react-type-animation';
-import { useCursorHover } from '../../hooks/useCursorHover';
-import { motion } from 'motion/react';
+import SocialMedia from "./SocialMedia";
+import girl from "../../assets/girlWithLaptop.svg";
+import { TypeAnimation } from "react-type-animation";
+import { useCursorHover } from "../../hooks/useCursorHover";
+import { motion } from "motion/react";
 
 export default function Hero() {
-	const { handleMouseEnter, handleMouseLeave } = useCursorHover();
-	return (
-		<div className='px-4 sm:px-6 md:px-20 lg:px-28 flex-center flex-col-reverse md:flex-row  justify-evenly md:mb-15 md:mt-10'>
-			<motion.section
-				className='flex flex-col gap-8 md:w-1/2'
-				initial={{ x: -200, opacity: 0 }}
-				whileInView={{ x: 0, opacity: 1 }}
-				transition={{ duration: 3, type: 'spring' }}
-				viewport={{ once: true }}>
-				<div className='flex flex-col gap-3 lg:gap-5 text-[28px]/[114%] lg:text-5xl/[117%] tracking-tight'>
-					<h1
-						onMouseEnter={() => handleMouseEnter(0)}
-						onMouseLeave={() => handleMouseLeave(40)}>
-						<span>Hello, I`am</span>{' '}
-						<TypeAnimation
-							sequence={['Junior', 3000, '', 1000, 'Nataliia', 1000]}
-							wrapper='span'
-							speed={50}
-							style={{ fontWeight: 800, display: 'inline-block' }}
-							repeat={0}
-							preRenderFirstString={true}
-						/>
-					</h1>
-					<p>
-						<span
-							className='font-extrabold'
-							onMouseEnter={() => handleMouseEnter(0)}
-							onMouseLeave={() => handleMouseLeave(40)}>
-							Frontend{' '}
-						</span>
-						<span className='text-primary-white text-stroke-1 text-stroke-primary-black font-extrabold'>
-							Developer
-						</span>
-					</p>
-					<p
-						onMouseEnter={() => handleMouseEnter(0)}
-						onMouseLeave={() => handleMouseLeave(40)}>
-						<span>Based In </span>
-						<span className='font-extrabold'>Poland.</span>
-					</p>
-				</div>
-				<p className='text-zinc-500 font-normal text-base/6'>
-					I am a passionate and highly motivated technology enthusiast with a
-					strong focus on building innovative solutions and continuously
-					expanding my skills. My goal is to grow as a developer and contribute
-					to meaningful projects within the dynamic and ever-evolving tech
-					industry, applying my skills to solve real-world problems.
-				</p>
-				<div className='lg:mt-10'>
-					<SocialMedia />
-				</div>
-			</motion.section>
+  const { handleMouseEnter, handleMouseLeave } = useCursorHover();
+  return (
+    <div className="flex-center flex-col-reverse justify-evenly px-4 sm:px-6 md:mt-10 md:mb-15 md:flex-row md:px-20 lg:px-28">
+      <motion.section
+        className="flex flex-col gap-8 md:w-1/2"
+        initial={{ x: -200, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 3, type: "spring" }}
+        viewport={{ once: true }}
+      >
+        <div className="flex flex-col gap-3 text-[28px]/[114%] tracking-tight lg:gap-5 lg:text-5xl/[117%]">
+          <h1
+            onMouseEnter={() => handleMouseEnter(0)}
+            onMouseLeave={() => handleMouseLeave(40)}
+          >
+            <span>Hello, I`am</span>{" "}
+            <TypeAnimation
+              sequence={["Junior", 3000, "", 1000, "Nataliia", 1000]}
+              wrapper="span"
+              speed={50}
+              style={{ fontWeight: 800, display: "inline-block" }}
+              repeat={0}
+              preRenderFirstString={true}
+            />
+          </h1>
+          <p>
+            <span
+              className="font-extrabold"
+              onMouseEnter={() => handleMouseEnter(0)}
+              onMouseLeave={() => handleMouseLeave(40)}
+            >
+              Frontend{" "}
+            </span>
+            <span className="text-primary-white text-stroke-1 text-stroke-primary-black font-extrabold">
+              Developer
+            </span>
+          </p>
+          <p
+            onMouseEnter={() => handleMouseEnter(0)}
+            onMouseLeave={() => handleMouseLeave(40)}
+          >
+            <span>Based In </span>
+            <span className="font-extrabold">Poland.</span>
+          </p>
+        </div>
+        <p className="text-base/6 font-normal text-zinc-500">
+          I am a passionate and highly motivated technology enthusiast with a
+          strong focus on building innovative solutions and continuously
+          expanding my skills. My goal is to grow as a developer and contribute
+          to meaningful projects within the dynamic and ever-evolving tech
+          industry, applying my skills to solve real-world problems.
+        </p>
+        <div className="lg:mt-10">
+          <SocialMedia />
+        </div>
+      </motion.section>
 
-			<motion.div
-				className='md:w-1/2 flex-center'
-				initial={{ x: 200, opacity: 0 }}
-				whileInView={{ opacity: 1, x: 0 }}
-				transition={{ duration: 3, type: 'spring' }}
-				viewport={{ once: true }}>
-				<img
-					src={girl}
-					alt='girl with laptop'
-					className='sm:w-[539px] xl:w-630 max-h-[750px]'
-				/>
-			</motion.div>
-		</div>
-	);
+      <motion.div
+        className="flex-center md:w-1/2"
+        initial={{ x: 200, opacity: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 3, type: "spring" }}
+        viewport={{ once: true }}
+      >
+        <img
+          src={girl}
+          alt="girl with laptop"
+          className="max-h-[750px] sm:w-[539px] xl:w-630"
+        />
+      </motion.div>
+    </div>
+  );
 }
