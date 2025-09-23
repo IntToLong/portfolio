@@ -1,11 +1,8 @@
 import Form from "./Form";
 import EmailIcon from "../../assets/email.svg?react";
-import { useCursorHover } from "../../hooks/useCursorHover";
 import { motion } from "motion/react";
 
 export default function Contact() {
-  const { handleMouseEnter, handleMouseLeave } = useCursorHover();
-
   return (
     <>
       <section className="bg-primary-black text-primary-black h-20 md:h-25"></section>
