@@ -1,12 +1,10 @@
 import { projectsData } from "../../constants";
-import { useCursorHover } from "../../hooks/useCursorHover";
 import Project from "./Project";
 
 export default function Projects() {
-  const { handleMouseEnter, handleMouseLeave } = useCursorHover();
   return (
     <section
-      className="bg-primary-white py-5 px-4 sm:px-6 sm:py-10 md:py-20 md:px-15 xl:px-28"
+      className="bg-primary-white px-4 py-5 sm:px-6 sm:py-10 md:px-15 md:py-20 xl:px-28"
       id="projects"
     >
       <h2 className="mb-10 text-center text-[28px]/[114%] tracking-tight lg:text-[48px]/[114%]">
@@ -18,14 +16,7 @@ export default function Projects() {
           return (
             <Project
               key={project.number}
-              imgSrc={project.imgSrc}
-              imgAlt={project.imgAlt}
-              number={project.number}
-              title={project.title}
-              description={project.description}
-              demo={project.demo}
-              github={project.github}
-              technologies={project.technologies}
+              project={project}
             />
           );
         })}

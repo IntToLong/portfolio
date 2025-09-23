@@ -14,7 +14,7 @@ export default function Contact() {
           <span className="pr-4">Contact</span>{" "}
           <span className="font-extrabold">Me</span>
         </h2>
-        <div className="md:flex md:flex-row-reverse md:items-center md:gap-15 xl:gap-28">
+        <div className="lg:flex md:flex-row-reverse md:items-center md:gap-15 xl:gap-28">
           <div className="my-8 flex w-full flex-col gap-8">
             <motion.h2
               className="text-[28px]/[114%] font-extrabold tracking-tight lg:text-5xl/[117%]"

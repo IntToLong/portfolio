@@ -24,7 +24,11 @@ export const projectsData: ProjectType[] = [
       "DOM",
       "Chrome Extension API",
       "Clipboard API"
-    ]
+    ],
+    ariaLabel: {
+      demo: "View QuickQuiz live demo",
+      github: "View QuickQuiz project source code on GitHub"
+    }
   },
   {
     imgSrc: "src/assets/quickquiz1.png",
@@ -41,7 +45,11 @@ export const projectsData: ProjectType[] = [
       "CSS Modules",
       "Redux",
       "Jest"
-    ]
+    ],
+    ariaLabel: {
+      demo: "View QuickQuiz live demo",
+      github: "View QuickQuiz project source code on GitHub"
+    }
   },
   {
     imgSrc: "src/assets/resumeLight.png",
@@ -52,7 +60,11 @@ export const projectsData: ProjectType[] = [
       "This project is a personal interactive online resume with a modern, responsive design and a dynamic canvas background. It is a visually engaging and functional portfolio that provides quick access to my LinkedIn and GitHub profiles. The resume includes features like a dark mode toggle for comfortable viewing, is optimized for printing, and allows users to download a PDF version for offline use.",
     demo: "https://inttolong.github.io/Resume/",
     github: "https://github.com/IntToLong/Resume",
-    technologies: ["HTML5", "Tailwind CSS", "TypeScript", "Vite"]
+    technologies: ["HTML5", "Tailwind CSS", "TypeScript", "Vite"],
+    ariaLabel: {
+      demo: "View Resume live demo",
+      github: "View Resume project source code on GitHub"
+    }
   },
   {
     imgSrc: "src/assets/portfolio.png",
@@ -63,6 +75,10 @@ export const projectsData: ProjectType[] = [
       "This project is an online portfolio that serves as a professional hub for showcasing my work. It features a dedicated projects block, which provides detailed descriptions of my various projects and professional accomplishments. This site, a project in itself, embodies the principle of recursion by acting as both a platform for my work and a tangible example of my web development capabilities.",
     demo: "/",
     github: "https://github.com/IntToLong/portfolio",
-    technologies: ["React", "Tailwind CSS", "TypeScript", "Vite"]
+    technologies: ["React", "Tailwind CSS", "TypeScript", "Vite"],
+    ariaLabel: {
+      demo: "View Portfolio live demo",
+      github: "View Portfolio project source code on GitHub"
+    }
   }
 ];

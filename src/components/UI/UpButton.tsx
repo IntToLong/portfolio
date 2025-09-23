@@ -1,22 +1,33 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ArrowIcon from "../../assets/arrow.svg?react";
+import { useCursorHover } from "../../hooks/useCursorHover";
 
 export default function UpButton() {
   const [isBtnVisible, setIsBtnVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 
   useEffect(() => {
     function setVisible() {
       setIsBtnVisible(window.scrollY > 200);
     }
+    function handleResize() {
+      setWindowSize(window.innerWidth);
+    }
+
     window.addEventListener("scroll", setVisible);
-    return () => window.removeEventListener("scroll", setVisible);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("scroll", setVisible);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
     <AnimatePresence>
-      {isBtnVisible && (
+      {isBtnVisible && windowSize > 1024 && (
         <motion.button
           className="group bg-primary-white fixed right-3 bottom-28 z-30 h-20 w-20 cursor-pointer rounded-full mix-blend-exclusion lg:block"
           initial={{ y: -50, opacity: 0 }}
@@ -31,6 +42,8 @@ export default function UpButton() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
+          onMouseOver={() => handleMouseEnter(120)}
+          onMouseLeave={() => handleMouseLeave(40)}
         >
           {" "}
           {!isHovered && (
@@ -38,7 +51,7 @@ export default function UpButton() {
               className="text-primary-black block font-bold"
               initial={{ y: 0, opacity: 1 }}
               animate={{ y: [0, 15, 0] }}
-              transition={{ duration: 1}}
+              transition={{ duration: 1 }}
             >
               Up
             </motion.span>

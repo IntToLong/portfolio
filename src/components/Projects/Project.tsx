@@ -1,23 +1,10 @@
-import { HTMLAttributes } from "react";
 import { motion } from "motion/react";
 import LinkIcon from "../../assets/link.svg?react";
 import GitHubIcon from "../../assets/social/github.svg?react";
 import { useCursorHover } from "../../hooks/useCursorHover";
 import { ProjectType } from "../../types/project";
 
-type ProjectProps = ProjectType & HTMLAttributes<HTMLDivElement>;
-
-export default function Project({
-  imgSrc,
-  imgAlt,
-  number,
-  title,
-  description,
-  demo,
-  github,
-  technologies,
-  ...props
-}: ProjectProps) {
+export default function Project({ project }: { project: ProjectType }) {
   const { handleMouseEnter, handleMouseLeave } = useCursorHover();
   return (
     <motion.article
@@ -25,15 +12,14 @@ export default function Project({
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 3, type: "spring" }}
       viewport={{ once: true }}
-      {...props}
       className="bg-primary-black text-primary-white flex flex-grow flex-col items-start gap-10 rounded-lg border-2 p-3 md:p-10 xl:p-20"
     >
       <div className="flex flex-col gap-10">
         <p className="text-primary-white text-2xl font-extrabold text-neutral-900 md:text-4xl">
-          {number < 10 ? `0${number}` : number}
+          {project.number < 10 ? `0${project.number}` : project.number}
         </p>
         <h3 className="text-primary-white text-xl font-extrabold tracking-tight text-neutral-800 md:text-3xl">
-          {title}
+          {project.title}
         </h3>
       </div>
       <p
@@ -41,13 +27,13 @@ export default function Project({
         onMouseEnter={() => handleMouseEnter(150)}
         onMouseLeave={() => handleMouseLeave(40)}
       >
-        {description}
+        {project.description}
       </p>
 
       <div className="flex flex-col gap-2">
         <span className="font-extrabold">Technologies:</span>
         <ul className="flex flex-wrap gap-2">
-          {technologies.map((tech: string, index: number) => (
+          {project.technologies.map((tech: string, index: number) => (
             <li
               key={index}
               className="rounded-full bg-neutral-100 px-3 py-1 text-sm font-medium text-neutral-700 shadow-sm"
@@ -59,7 +45,8 @@ export default function Project({
       </div>
       <div className="flex gap-4 pt-2">
         <a
-          href={demo}
+          href={project.demo}
+          aria-label={project.ariaLabel.demo}
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-full bg-neutral-100 p-2 transition-colors hover:bg-neutral-200"
@@ -68,7 +55,8 @@ export default function Project({
         </a>
 
         <a
-          href={github}
+          href={project.github}
+          aria-label={project.ariaLabel.github}
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-full bg-neutral-100 p-2 transition-colors hover:bg-neutral-200"

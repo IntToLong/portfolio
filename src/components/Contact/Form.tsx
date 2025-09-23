@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Input from "./Input";
-import { useCursorHover } from "../../hooks/useCursorHover";
 import Modal from "../UI/Modal";
 import CheckIcon from "../../assets/check.svg?react";
 import ErrorIcon from "../../assets/error.svg?react";
@@ -14,7 +13,6 @@ export default function Form() {
   const [isInvalidMessage, setIsInvalidMessage] = useState(false);
   const [isInvalidEmail, setIsInvalidEmail] = useState(false);
   const form = useRef<HTMLFormElement>(null)!;
-  const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 
   const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -41,25 +39,25 @@ export default function Form() {
       return;
     }
 
-    // if (formElement) {
-    // 	emailjs
-    // 		.sendForm(
-    // 			import.meta.env.VITE_SERVICE_ID,
-    // 			import.meta.env.VITE_TEMPLATE_ID,
-    // 			form.current,
-    // 			{
-    // 				publicKey: import.meta.env.VITE_PUBLIC_KEY,
-    // 			}
-    // 		)
-    // 		.then(() => {
-    // 			setIsSent('success');
-    // 		})
-    // 		.catch((error) => {
-    // 			setIsSent('error');
-    // 			console.log('FAILED...', error.text);
-    // 		})
-    // 		.finally(() => setClicked(false));
-    // }
+    if (formElement) {
+      emailjs
+        .sendForm(
+          import.meta.env.VITE_SERVICE_ID,
+          import.meta.env.VITE_TEMPLATE_ID,
+          formElement,
+          {
+            publicKey: import.meta.env.VITE_PUBLIC_KEY
+          }
+        )
+        .then(() => {
+          setIsSent("success");
+        })
+        .catch((error) => {
+          setIsSent("error");
+          console.log("FAILED...", error.text);
+        })
+        .finally(() => setClicked(false));
+    }
   };
 
   return (
@@ -84,24 +82,26 @@ export default function Form() {
         rows={5}
         required
       ></textarea>
-      <FormActions clicked={clicked} sendEmail={sendEmail} />
+      <FormActions clicked={clicked} />
       <Modal open={isSent} onClose={() => setIsSent("")}>
-        {isSent === "success" && (
-          <>
-            <div className="flex-center w-full">
-              <CheckIcon className="h-20 w-20" />
-            </div>
-            <p>Your message is sent!</p>
-          </>
-        )}
-        {isSent === "error" && (
-          <>
-            <div className="flex-center w-full">
-              <ErrorIcon className="h-20 w-20" />
-            </div>
-            <p>Oops! Something went wrong. Please try again.</p>
-          </>
-        )}
+        <div>
+			{isSent === "success" && (
+			  <>
+				<div className="flex-center w-full">
+				  <CheckIcon className="h-20 w-20" />
+				</div>
+				<p>Your message is sent!</p>
+			  </>
+			)}
+			{isSent === "error" && (
+			  <>
+				<div className="flex-center w-full">
+				  <ErrorIcon className="h-20 w-20" />
+				</div>
+				<p>Oops! Something went wrong. Please try again.</p>
+			  </>
+			)}
+		</div>
       </Modal>
     </form>
   );

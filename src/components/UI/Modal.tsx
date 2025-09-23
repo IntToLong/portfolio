@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect } from "react";
+import { useEffect } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -7,8 +7,8 @@ export default function Modal({
   open,
   onClose
 }: {
-  children: PropsWithChildren;
-  open: boolean;
+  children: React.ReactNode;
+  open: string;
   onClose: () => void;
 }) {
   useEffect(() => {
