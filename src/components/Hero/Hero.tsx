@@ -58,7 +58,7 @@ export default function Hero() {
         <img
           src={girl}
           alt="girl with laptop"
-          fetchpriority="high"
+          fetchPriority="high"
           className="max-h-[750px] sm:w-[539px] xl:w-630"
         />
       </motion.div>

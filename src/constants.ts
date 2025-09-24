@@ -74,7 +74,7 @@ export const projectsData: ProjectType[] = [
     description:
       "This project is an online portfolio that serves as a professional hub for showcasing my work. It features a dedicated projects block, which provides detailed descriptions of my various projects and professional accomplishments. This site, a project in itself, embodies the principle of recursion by acting as both a platform for my work and a tangible example of my web development capabilities.",
     demo: "/",
-    github: "https://github.com/IntToLong/portfolio",
+    github: "https://inttolong.github.io/portfolio/",
     technologies: ["React", "Tailwind CSS", "TypeScript", "Vite"],
     ariaLabel: {
       demo: "View Portfolio live demo",
