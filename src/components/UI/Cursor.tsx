@@ -8,7 +8,7 @@ import CursorContext from "../../contexts/CursorContext";
 export default function Cursor() {
   const { size, color } = use(CursorContext);
   const circle = useRef<HTMLDivElement>(null);
-  const mouse = useRef({ x: 0, y: 0 });
+  const mouse = useRef({ x: 200, y: 200 });
 
   const delayedMouse = useRef({
     x: 0,

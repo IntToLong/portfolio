@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export default function Hero() {
   return (
-    <div className="flex-center bg-primary-white flex-col-reverse justify-evenly px-4 sm:px-6 md:pt-10 md:flex-row md:px-20 lg:px-28">
+    <div className="flex-center bg-primary-white flex-col-reverse justify-evenly px-4 sm:px-6 md:flex-row md:px-20 md:pt-10 lg:px-28">
       <motion.section
         className="flex flex-col gap-8 md:w-1/2"
         initial={{ x: -200, opacity: 0 }}
@@ -58,6 +58,7 @@ export default function Hero() {
         <img
           src={girl}
           alt="girl with laptop"
+          fetchpriority="high"
           className="max-h-[750px] sm:w-[539px] xl:w-630"
         />
       </motion.div>
