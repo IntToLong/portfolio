@@ -6,7 +6,7 @@ export default function AboutMe() {
   const { handleMouseEnter, handleMouseLeave } = useCursorHover();
   return (
     <section
-      className="bg-primary-black flex flex-col gap-10 p-4 sm:p-6 md:p-20 lg:flex-row lg:px-28"
+      className="bg-primary-black flex flex-col gap-10 px-4 py-5 sm:p-6 md:p-20 lg:flex-row lg:px-28"
       id="about"
     >
       <div className="flex-center lg:w-1/2">
@@ -14,7 +14,7 @@ export default function AboutMe() {
       </div>
       <div className="lg:w-1/2">
         <h3 className="text-primary-white mb-10 text-[28px]/[114%] tracking-tight lg:text-5xl/[117%]">
-          <span className="pr-4">About</span>{" "}
+          <span className="pr-2 md:pr-4">About</span>{" "}
           <span className="font-extrabold">Me</span>
         </h3>
         <article

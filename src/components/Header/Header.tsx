@@ -26,7 +26,7 @@ export default function Header() {
     >
       {isMenuOpen ? (
         <button
-          className="absolute right-4 h-[45px] cursor-pointer"
+          className="absolute right-4 h-[45px] cursor-pointer flex-center"
           onClick={() => setIsMenuOpen(false)}
         >
           <img src={crossIcon} alt="close menu icon" className="w-7" />
@@ -42,10 +42,3 @@ export default function Header() {
     </header>
   );
 }
-
-<nav>
-  <ul>
-    <li>About</li>
-    <li>New</li>
-  </ul>
-</nav>;

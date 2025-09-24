@@ -21,7 +21,8 @@ html {
 body {
   font-family: "Sora", sans-serif;
   overflow-x: hidden;
-  cursor: url('./assets/dot.svg'), auto;
+  /* cursor: url('./assets/dot.svg'), auto; */
+  cursor: none;
 }
 
 input,

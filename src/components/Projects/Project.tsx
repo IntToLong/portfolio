@@ -12,7 +12,7 @@ export default function Project({ project }: { project: ProjectType }) {
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 3, type: "spring" }}
       viewport={{ once: true }}
-      className="bg-primary-black text-primary-white flex flex-grow flex-col items-start gap-10 rounded-lg border-2 p-3 md:p-10 xl:p-20"
+      className="bg-primary-black text-primary-white flex flex-grow flex-col items-start gap-10 rounded-lg border-2 px-3 py-5 md:p-10 xl:p-20"
     >
       <div className="flex flex-col gap-10">
         <p className="text-primary-white text-2xl font-extrabold text-neutral-900 md:text-4xl">

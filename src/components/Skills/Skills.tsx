@@ -13,11 +13,11 @@ import SkillCard from "./SkillCard";
 export default function Skills() {
   return (
     <section
-      className="py-20 px-4 py-10 sm:px-6 md:px-20 lg:px-28 2xl:px-36 bg-primary-white"
+      className="bg-primary-white px-4 py-10 sm:px-6 md:px-20 lg:px-28 2xl:px-36"
       id="skills"
     >
       <h2 className="mb-10 text-center text-[28px]/[114%] tracking-tight lg:text-[48px]/[114%]">
-        <span className="pr-4">My</span>
+        <span className="pr-2 md:pr-4">My</span>
         <span className="font-extrabold">Skills</span>
       </h2>
       <ul className="grid grid-cols-2 justify-items-center gap-5 md:grid-cols-3 md:gap-5 lg:grid-cols-4 lg:gap-12 xl:grid-cols-5">
