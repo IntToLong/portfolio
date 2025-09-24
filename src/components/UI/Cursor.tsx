@@ -24,8 +24,8 @@ export default function Cursor() {
   function animate() {
     const { x, y } = delayedMouse.current;
     delayedMouse.current = {
-      x: lerp(x, mouse.current.x, 0.095),
-      y: lerp(y, mouse.current.y, 0.095)
+      x: lerp(x, mouse.current.x, 0.05),
+      y: lerp(y, mouse.current.y, 0.05)
     };
     window.requestAnimationFrame(animate);
     moveCircle(delayedMouse.current.x, delayedMouse.current.y);
