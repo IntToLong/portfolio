@@ -37,7 +37,7 @@ export default function Header() {
           <BurgerMenu onclick={() => setIsMenuOpen(true)} />
         </>
       )}
-      <NavBar isMenuOpen={isMenuOpen} />
+      <NavBar isMenuOpen={isMenuOpen} closeMenu={() => setIsMenuOpen(false)} />
       <ResumeLink isMenuOpen={isMenuOpen} />
     </header>
   );

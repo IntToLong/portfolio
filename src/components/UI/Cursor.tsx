@@ -37,16 +37,18 @@ export default function Cursor() {
   }
 
   useEffect(() => {
-    animate();
-    window.addEventListener("mousemove", manageMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", manageMouseMove);
-    };
+    if (window.innerWidth >= 1024) {
+      animate();
+      window.addEventListener("mousemove", manageMouseMove);
+      return () => {
+        window.removeEventListener("mousemove", manageMouseMove);
+      };
+    }
   }, []);
   return (
     <div
       ref={circle}
-      className={`fixed top-0 left-0 bg-${color} pointer-events-none rounded-full mix-blend-exclusion transition-all duration-50 z-30`}
+      className={`fixed top-0 left-0 hidden lg:block bg-${color} pointer-events-none z-30 rounded-full mix-blend-exclusion transition-all duration-50`}
       style={{ width: size, height: size }}
     ></div>
   );

@@ -2,9 +2,14 @@ import { linksInfo } from "../../constants";
 import Link from "./Link";
 import { NavLink } from "../../types/nav";
 
-export default function NavBar({ isMenuOpen }: { isMenuOpen: boolean }) {
+export default function NavBar({ isMenuOpen, closeMenu }: { isMenuOpen: boolean; closeMenu:() => void }) {
   const links = linksInfo.map((link: NavLink) => (
-    <Link key={link.path} title={link.title} path={link.path} />
+    <Link
+      key={link.path}
+      title={link.title}
+      path={link.path}
+      closeMenu={closeMenu}
+    />
   ));
 
   return (

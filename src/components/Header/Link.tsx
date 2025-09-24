@@ -2,13 +2,14 @@ import { useCursorHover } from '../../hooks/useCursorHover';
 import { NavLink } from "../../types/nav";
 
 
-export default function Link({ title, path }: NavLink) {
+export default function Link({ title, path, closeMenu }: NavLink) {
   const { handleMouseEnter, handleMouseLeave } = useCursorHover();
   return (
     <li
       className="group flex flex-col font-semibold hover:font-bold xl:text-xl/[120%]"
       onMouseEnter={() => handleMouseEnter(75)}
       onMouseLeave={() => handleMouseLeave(40)}
+      onClick={closeMenu}
     >
       <a href={path}>{title}</a>
       <span
