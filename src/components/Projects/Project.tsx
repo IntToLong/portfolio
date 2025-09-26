@@ -8,9 +8,9 @@ export default function Project({ project }: { project: ProjectType }) {
   const { handleMouseEnter, handleMouseLeave } = useCursorHover();
   return (
     <motion.article
-      initial={{ y: 100, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 2, type: "spring" }}
+      initial={{ x: 75, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.9, type: "spring" }}
       viewport={{ once: true }}
       className="bg-primary-black text-primary-white flex flex-grow flex-col items-start gap-10 rounded-lg border-2 px-3 py-5 md:p-10 xl:p-20"
     >

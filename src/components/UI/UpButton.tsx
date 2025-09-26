@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import ArrowIcon from "../../assets/arrow.svg?react";
 import { useCursorHover } from "../../hooks/useCursorHover";
 
@@ -42,7 +42,7 @@ export default function UpButton() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
-          onMouseOver={() => handleMouseEnter(120)}
+          onMouseEnter={() => handleMouseEnter(120)}
           onMouseLeave={() => handleMouseLeave(40)}
         >
           {" "}

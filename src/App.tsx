@@ -13,7 +13,7 @@ import CursorProvider from "./contexts/CursorProvider";
 function App() {
   return (
     <CursorProvider>
-      <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
+      <div className="grid min-h-screen cursor-default grid-rows-[auto_1fr_auto] lg:cursor-none">
         <Header />
         <main className="overflow-x-hidden">
           <Hero />

@@ -13,7 +13,7 @@ import SkillCard from "./SkillCard";
 export default function Skills() {
   return (
     <section
-      className="bg-primary-white px-4 py-10 sm:px-6 md:px-20 lg:px-28 2xl:px-36"
+      className="bg-primary-white px-4 py-10 lg:pb-25 sm:px-6 md:px-20 lg:px-28 2xl:px-36"
       id="skills"
     >
       <h2 className="mb-10 text-center text-[28px]/[114%] tracking-tight lg:text-[48px]/[114%]">
