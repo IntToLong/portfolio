@@ -96,13 +96,3 @@ A list of useful scripts defined in `package.json`:
 * `npm run lint`: Runs ESLint for code quality analysis.
 * `npm run format`: Runs Prettier to ensure consistent code styling.
 * `npm run deploy`: Builds the app and publishes it to GitHub Pages.
-
----
-
-## Connect with Me
-
-I'm always open to discussing new projects, collaborations, or career opportunities. Feel free to connect!
-
-* **LinkedIn:** [Nataliia Luibynets](https://www.linkedin.com/in/nataliia-luibynets/)
-* **GitHub:** [IntToLong](https://github.com/IntToLong/)
-* **Email:** liubynets.nataliia@gmail.com
