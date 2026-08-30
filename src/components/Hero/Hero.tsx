@@ -15,7 +15,7 @@ export default function Hero() {
       >
         <div className="flex flex-col gap-3 text-[28px]/[114%] tracking-tight lg:gap-5 lg:text-5xl/[117%]">
           <h1>
-            <span>Hello, I`am</span>{" "}
+            <span>Hello, I'm</span>{" "}
             <TypeAnimation
               sequence={["Junior", 3000, "", 1000, "Nataliia", 1000]}
               wrapper="span"

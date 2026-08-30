@@ -4,21 +4,18 @@ import ArrowIcon from "../../assets/arrow.svg?react";
 import { useCursorHover } from "../../hooks/useCursorHover";
 
 export default function UpButton() {
-  const [isBtnVisible, setIsBtnVisible] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [isBtnVisible, setIsBtnVisible] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
   const { handleMouseEnter, handleMouseLeave } = useCursorHover();
 
   useEffect(() => {
-    function setVisible() {
-      setIsBtnVisible(window.scrollY > 200);
-    }
-    function handleResize() {
-      setWindowSize(window.innerWidth);
-    }
+    const setVisible = () => setIsBtnVisible(window.scrollY > 200);
+    const handleResize = () => setWindowSize(window.innerWidth);
 
     window.addEventListener("scroll", setVisible);
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("scroll", setVisible);
       window.removeEventListener("resize", handleResize);

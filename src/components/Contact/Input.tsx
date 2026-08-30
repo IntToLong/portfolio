@@ -1,16 +1,18 @@
+type Props = {
+  type: string;
+  placeholder: string;
+  name: string;
+  required?: boolean;
+  invalid?: boolean;
+};
+
 export default function Input({
   type,
   placeholder,
   name,
   required,
   invalid
-}: {
-  type: string;
-  placeholder: string;
-  name: string;
-  required?: boolean;
-  invalid?: boolean;
-}) {
+}: Props) {
   return (
     <input
       type={type}

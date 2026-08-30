@@ -4,8 +4,13 @@ import GitHubIcon from "../../assets/social/github.svg?react";
 import { useCursorHover } from "../../hooks/useCursorHover";
 import { ProjectType } from "../../types/project";
 
-export default function Project({ project }: { project: ProjectType }) {
+type Props = { project: ProjectType };
+
+export default function Project({ project }: Props) {
   const { handleMouseEnter, handleMouseLeave } = useCursorHover();
+  const { id, title, description, technologies, demo, ariaLabel, github } =
+    project;
+
   return (
     <motion.article
       initial={{ x: 75, opacity: 0 }}
@@ -16,10 +21,10 @@ export default function Project({ project }: { project: ProjectType }) {
     >
       <div className="flex flex-col gap-10">
         <p className="text-primary-white text-2xl font-extrabold text-neutral-900 md:text-4xl">
-          {project.number < 10 ? `0${project.number}` : project.number}
+          {id < 10 ? `0${id}` : id}
         </p>
         <h3 className="text-primary-white text-xl font-extrabold tracking-tight text-neutral-800 md:text-3xl">
-          {project.title}
+          {title}
         </h3>
       </div>
       <p
@@ -27,13 +32,13 @@ export default function Project({ project }: { project: ProjectType }) {
         onMouseEnter={() => handleMouseEnter(150)}
         onMouseLeave={() => handleMouseLeave(40)}
       >
-        {project.description}
+        {description}
       </p>
 
       <div className="flex flex-col gap-2">
         <span className="font-extrabold">Technologies:</span>
         <ul className="flex flex-wrap gap-2">
-          {project.technologies.map((tech: string, index: number) => (
+          {technologies.map((tech: string, index: number) => (
             <li
               key={index}
               className="rounded-full bg-neutral-100 px-3 py-1 text-sm font-medium text-neutral-700 shadow-sm"
@@ -45,8 +50,8 @@ export default function Project({ project }: { project: ProjectType }) {
       </div>
       <div className="flex gap-4 pt-2">
         <a
-          href={project.demo}
-          aria-label={project.ariaLabel.demo}
+          href={demo}
+          aria-label={ariaLabel.demo}
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-full bg-neutral-100 p-2 transition-colors hover:bg-neutral-200"
@@ -55,8 +60,8 @@ export default function Project({ project }: { project: ProjectType }) {
         </a>
 
         <a
-          href={project.github}
-          aria-label={project.ariaLabel.github}
+          href={github}
+          aria-label={ariaLabel.github}
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-full bg-neutral-100 p-2 transition-colors hover:bg-neutral-200"

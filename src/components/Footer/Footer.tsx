@@ -1,7 +1,8 @@
 import Logo from "../Header/Logo";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const year: number = new Date().getFullYear();
+
   return (
     <footer className="bg-primary-black text-primary-white flex items-center justify-between px-5 py-5 md:px-20 lg:px-[112px]">
       <Logo color="white" />

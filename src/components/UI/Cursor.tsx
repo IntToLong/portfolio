@@ -5,14 +5,14 @@ import { useContext } from "react";
 
 export default function Cursor() {
   const { size, color } = useContext(CursorContext);
-  const mouseX = useMotionValue(200);
-  const mouseY = useMotionValue(200);
+  const mouseX = useMotionValue<number>(-100);
+  const mouseY = useMotionValue<number>(-100);
 
   useEffect(() => {
-    function handleMouseMove(event: MouseEvent) {
+    const handleMouseMove = (event: MouseEvent) => {
       mouseX.set(event.clientX - size / 2);
       mouseY.set(event.clientY - size / 2);
-    }
+    };
 
     if (window.innerWidth >= 1024) {
       window.addEventListener("mousemove", handleMouseMove);

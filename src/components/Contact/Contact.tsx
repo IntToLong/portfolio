@@ -22,7 +22,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, type: "spring" }}
             >
-              Let`s
+              Let's
               <span className="text-stroke-1 text-stroke-primary-black text-primary-white px-3">
                 talk
               </span>
@@ -30,8 +30,8 @@ export default function Contact() {
               <br /> Something special
             </motion.h2>
             <p className="text-base/[150%] text-zinc-500">
-              I`m currently looking for new opportunities, my inbox always open.
-              Whether you have a question or just want to say hi, I`ll try my
+              I'm currently looking for new opportunities, my inbox always open.
+              Whether you have a question or just want to say hi, I'll try my
               best to get back to you!
             </p>
             <p className="flex items-center transition-all duration-300 hover:pl-3">
