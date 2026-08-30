@@ -13,7 +13,7 @@ export default function Projects() {
       </h2>
       <div className="grid gap-3 md:gap-10 lg:grid-cols-2 lg:gap-15 xl:gap-30">
         {projectsData.map((project) => {
-          return <Project key={project.number} project={project} />;
+          return <Project key={project.id} project={project} />;
         })}
       </div>
     </section>

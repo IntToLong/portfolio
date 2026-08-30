@@ -2,15 +2,13 @@ import { useEffect } from "react";
 
 import { motion, AnimatePresence } from "motion/react";
 
-export default function Modal({
-  children,
-  open,
-  onClose
-}: {
+type Props = {
   children: React.ReactNode;
-  open: string;
+  open: boolean;
   onClose: () => void;
-}) {
+};
+
+export default function Modal({ children, open, onClose }: Props) {
   useEffect(() => {
     if (!open) return;
 

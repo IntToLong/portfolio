@@ -1,4 +1,8 @@
-export default function ResumeLink({ isMenuOpen }: { isMenuOpen: boolean }) {
+type Props = {
+  isMenuOpen: boolean;
+};
+
+export default function ResumeLink({ isMenuOpen }: Props) {
   return (
     <a
       href="https://inttolong.github.io/Resume/"

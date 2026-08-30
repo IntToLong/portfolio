@@ -6,24 +6,28 @@ import CheckIcon from "../../assets/check.svg?react";
 import ErrorIcon from "../../assets/error.svg?react";
 import FormActions from "./FormActions";
 import { emailRegex } from "../../constants";
+import { STATUS, type Status } from "../../types/status";
 
 export default function Form() {
-  const [isSent, setIsSent] = useState("");
-  const [clicked, setClicked] = useState(false);
+  const [sentStatus, setSentStatus] = useState<Status | null>(null);
+  const [isClicked, setIsClicked] = useState(false);
   const [isInvalidMessage, setIsInvalidMessage] = useState(false);
   const [isInvalidEmail, setIsInvalidEmail] = useState(false);
-  const form = useRef<HTMLFormElement>(null)!;
+  const form: React.RefObject<HTMLFormElement | null> =
+    useRef<HTMLFormElement>(null);
 
   const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setClicked(true);
+    setIsClicked(true);
     setIsInvalidMessage(false);
     setIsInvalidEmail(false);
-    const formElement = form.current as HTMLFormElement;
-    const formData = new FormData(formElement);
+
+    if (!form.current) return;
+    const formElement: HTMLFormElement = form.current;
+    const formData: FormData = new FormData(formElement);
     const email = formData.get("email") as string;
     const message = formData.get("message") as string;
-    console.log(message);
+
     if (
       !message.trim().length ||
       !email.trim().length ||
@@ -35,7 +39,7 @@ export default function Form() {
       if (!email.trim().length || !emailRegex.test(email)) {
         setIsInvalidEmail(true);
       }
-      setClicked(false);
+      setIsClicked(false);
       return;
     }
 
@@ -50,13 +54,13 @@ export default function Form() {
           }
         )
         .then(() => {
-          setIsSent("success");
+          setSentStatus(STATUS.SUCCESS);
         })
         .catch((error) => {
-          setIsSent("error");
+          setSentStatus(STATUS.ERROR);
           console.log("FAILED...", error.text);
         })
-        .finally(() => setClicked(false));
+        .finally(() => setIsClicked(false));
     }
   };
 
@@ -82,26 +86,26 @@ export default function Form() {
         rows={5}
         required
       ></textarea>
-      <FormActions clicked={clicked} />
-      <Modal open={isSent} onClose={() => setIsSent("")}>
+      <FormActions isClicked={isClicked} />
+      <Modal open={!!sentStatus} onClose={() => setSentStatus(null)}>
         <div>
-			{isSent === "success" && (
-			  <>
-				<div className="flex-center w-full">
-				  <CheckIcon className="h-20 w-20" />
-				</div>
-				<p>Your message is sent!</p>
-			  </>
-			)}
-			{isSent === "error" && (
-			  <>
-				<div className="flex-center w-full">
-				  <ErrorIcon className="h-20 w-20" />
-				</div>
-				<p>Oops! Something went wrong. Please try again.</p>
-			  </>
-			)}
-		</div>
+          {sentStatus === STATUS.SUCCESS && (
+            <>
+              <div className="flex-center w-full">
+                <CheckIcon className="h-20 w-20" />
+              </div>
+              <p>Your message is sent!</p>
+            </>
+          )}
+          {sentStatus === STATUS.ERROR && (
+            <>
+              <div className="flex-center w-full">
+                <ErrorIcon className="h-20 w-20" />
+              </div>
+              <p>Oops! Something went wrong. Please try again.</p>
+            </>
+          )}
+        </div>
       </Modal>
     </form>
   );

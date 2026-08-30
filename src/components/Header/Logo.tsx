@@ -1,4 +1,8 @@
-export default function Logo({ color }: { color: string }) {
+type Props = {
+  color: string;
+};
+
+export default function Logo({ color }: Props) {
   return (
     <div
       className="flex-center cursor-pointer transition-all duration-300 ease-in hover:scale-125"

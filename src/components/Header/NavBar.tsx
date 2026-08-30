@@ -2,7 +2,12 @@ import { linksInfo } from "../../constants";
 import Link from "./Link";
 import { NavLink } from "../../types/nav";
 
-export default function NavBar({ isMenuOpen, closeMenu }: { isMenuOpen: boolean; closeMenu:() => void }) {
+type Props = {
+  isMenuOpen: boolean;
+  closeMenu: () => void;
+};
+
+export default function NavBar({ isMenuOpen, closeMenu }: Props) {
   const links = linksInfo.map((link: NavLink) => (
     <Link
       key={link.path}

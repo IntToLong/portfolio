@@ -1,12 +1,11 @@
 import { ReactNode } from "react";
 
-export default function SocialCard({
-  path,
-  children
-}: {
+type Props = {
   path: string;
-  children?: ReactNode | undefined;
-}) {
+  children?: ReactNode;
+};
+
+export default function SocialCard({ path, children }: Props) {
   return (
     <a
       href={path}
