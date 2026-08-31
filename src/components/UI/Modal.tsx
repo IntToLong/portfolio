@@ -40,8 +40,9 @@ export default function Modal({ children, open, onClose }: Props) {
           <div className="flex w-full flex-col justify-between gap-4 text-center">
             {children}
             <button
+              type="button"
               onClick={onClose}
-              className="text-primary-white bg-primary-black hover:bg-primary-neutral active:text-primary-black active:bg-primary-white active:shadow-bottom w-full rounded border-2 px-4 py-3 font-semibold transition-colors"
+              className="text-primary-white bg-primary-black hover:bg-primary-neutral active:text-primary-black active:bg-primary-white active:shadow-bottom w-full cursor-pointer rounded border-2 px-4 py-3 font-semibold transition-colors"
             >
               Ok
             </button>
