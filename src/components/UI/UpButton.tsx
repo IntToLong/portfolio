@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import ArrowIcon from "../../assets/arrow.svg?react";
-import { useCursorHover } from "../../hooks/useCursorHover";
+import ArrowIcon from "@app/assets/arrow.svg?react";
+import { useCursorHover } from "@app/hooks/useCursorHover";
 
 export default function UpButton() {
   const [isBtnVisible, setIsBtnVisible] = useState<boolean>(false);

@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
-import LinkIcon from "../../assets/link.svg?react";
-import GitHubIcon from "../../assets/social/github.svg?react";
-import { useCursorHover } from "../../hooks/useCursorHover";
-import { ProjectType } from "../../types/project";
+import LinkIcon from "@app/assets/link.svg?react";
+import GitHubIcon from "@app/assets/social/github.svg?react";
+import { useCursorHover } from "@app/hooks/useCursorHover";
+import { ProjectType } from "@app/types/project";
 
 type Props = { project: ProjectType };
 

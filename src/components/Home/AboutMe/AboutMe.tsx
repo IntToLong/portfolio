@@ -1,5 +1,5 @@
-import girl from "../../assets/girl.svg";
-import { useCursorHover } from "../../hooks/useCursorHover";
+import girl from "@app/assets/girl.svg";
+import { useCursorHover } from "@app/hooks/useCursorHover";
 import { motion } from "motion/react";
 
 export default function AboutMe() {

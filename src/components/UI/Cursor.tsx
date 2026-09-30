@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion, useMotionValue } from "motion/react";
-import CursorContext from "../../contexts/CursorContext";
+import CursorContext from "@app/contexts/CursorContext";
 import { useContext } from "react";
 
 export default function Cursor() {

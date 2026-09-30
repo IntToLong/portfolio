@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Input from "./Input";
-import Modal from "../UI/Modal";
-import CheckIcon from "../../assets/check.svg?react";
-import ErrorIcon from "../../assets/error.svg?react";
+import Modal from "@app/components/UI/Modal";
+import CheckIcon from "@app/assets/check.svg?react";
+import ErrorIcon from "@app/assets/error.svg?react";
 import FormActions from "./FormActions";
-import { emailRegex } from "../../constants";
-import { STATUS, type Status } from "../../types/status";
+import { emailRegex } from "@app/constants";
+import { STATUS, type Status } from "@app/types/status";
 
 export default function Form() {
   const [sentStatus, setSentStatus] = useState<Status | null>(null);

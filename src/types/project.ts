@@ -7,11 +7,9 @@ export interface ProjectType {
   technologies: string[];
   imgSrc?: string;
   imgAlt?: string;
-}
-
-export interface ProjectType {
   ariaLabel: {
     demo: string;
     github: string;
   };
 }
+

@@ -1,4 +1,4 @@
-import menuIcon from "../../assets/menu.svg";
+import menuIcon from "@app/assets/menu.svg";
 
 type Props = {
   onclick: () => void;

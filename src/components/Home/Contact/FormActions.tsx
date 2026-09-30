@@ -1,8 +1,8 @@
-import SocialCard from "../Hero/SocialCard";
-import FacebookIcon from "../../assets/social/facebook.svg?react";
-import LinkedinIcon from "../../assets/social/linkedin.svg?react";
-import DiscordIcon from "../../assets/social/discord.svg?react";
-import GitHubIcon from "../../assets/social/github.svg?react";
+import SocialCard from "@app/components/Home/Hero/SocialCard";
+import FacebookIcon from "@app/assets/social/facebook.svg?react";
+import LinkedinIcon from "@app/assets/social/linkedin.svg?react";
+import DiscordIcon from "@app/assets/social/discord.svg?react";
+import GitHubIcon from "@app/assets/social/github.svg?react";
 
 export default function FormActions({ isClicked }: { isClicked: boolean }) {
   return (
