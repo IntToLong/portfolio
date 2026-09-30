@@ -5,12 +5,14 @@ import DiscordIcon from "@app/assets/social/discord.svg?react";
 import GitHubIcon from "@app/assets/social/github.svg?react";
 
 export default function FormActions({ isClicked }: { isClicked: boolean }) {
+  const isTemporarilyUnavailable = true;
+
   return (
     <div className="flex flex-col justify-between gap-5 md:flex-row">
       <button
         type="submit"
-        disabled={isClicked}
-        className="group text-primary-white bg-primary-black hover:text-primary-black hover:bg-primary-white hover:shadow-bottom flex-center disabled:text-primary-black disabled:bg-primary-white disabled:shadow-bottom relative h-14 w-[153px] cursor-pointer gap-2 rounded px-4 py-3 font-semibold transition-all active:translate-y-1 md:border-2 xl:w-44"
+        disabled={isTemporarilyUnavailable || isClicked}
+        className="group text-primary-white bg-primary-black hover:text-primary-black hover:bg-primary-white hover:shadow-bottom flex-center disabled:text-primary-black disabled:bg-primary-white disabled:shadow-bottom disabled:cursor-not-allowed relative h-14 w-[153px] cursor-pointer gap-2 rounded px-4 py-3 font-semibold transition-all enabled:active:translate-y-1 md:border-2 xl:w-44"
       >
         {isClicked ? "Sending..." : "Get In Touch"}
       </button>
