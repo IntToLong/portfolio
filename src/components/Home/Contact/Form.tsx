@@ -7,6 +7,7 @@ import ErrorIcon from "@app/assets/error.svg?react";
 import FormActions from "./FormActions";
 import { emailRegex } from "@app/constants";
 import { STATUS, type Status } from "@app/types/status";
+import TemporarilyUnavailable from "./TemporarilyUnavailable";
 
 export default function Form() {
   const [sentStatus, setSentStatus] = useState<Status | null>(null);
@@ -65,28 +66,31 @@ export default function Form() {
   };
 
   return (
-    <form
-      ref={form}
-      onSubmit={sendEmail}
-      className="relative flex w-full flex-col gap-5"
-    >
-      <Input type="text" placeholder="Name" name="name" />
-      <Input
-        type="email"
-        placeholder="Email"
-        name="email"
-        invalid={isInvalidEmail}
-      />
-      <Input type="text" placeholder="Subject" name="title" />
-      <textarea
-        className={`border-primary-black w-full rounded border-2 px-6 py-4 text-base/[125%] tracking-tight focus:text-zinc-800 ${isInvalidMessage ? "border-red-700 text-red-700 placeholder:text-red-700" : "border-primary-black text-zinc-800 placeholder:text-zinc-400"} transition-all duration-300`}
-        id="message"
-        name="message"
-        placeholder="Write your message"
-        rows={5}
-        required
-      ></textarea>
-      <FormActions isClicked={isClicked} />
+    <>
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="relative flex w-full flex-col gap-5"
+      >
+        <Input type="text" placeholder="Name" name="name" />
+        <Input
+          type="email"
+          placeholder="Email"
+          name="email"
+          invalid={isInvalidEmail}
+        />
+        <Input type="text" placeholder="Subject" name="title" />
+        <textarea
+          className={`border-primary-black w-full rounded border-2 px-6 py-4 text-base/[125%] tracking-tight focus:text-zinc-800 ${isInvalidMessage ? "border-red-700 text-red-700 placeholder:text-red-700" : "border-primary-black text-zinc-800 placeholder:text-zinc-400"} transition-all duration-300`}
+          id="message"
+          name="message"
+          placeholder="Write your message"
+          rows={5}
+          required
+        ></textarea>
+        <FormActions isClicked={isClicked} />
+        <TemporarilyUnavailable />
+      </form>
       <Modal open={!!sentStatus} onClose={() => setSentStatus(null)}>
         <div>
           {sentStatus === STATUS.SUCCESS && (
@@ -107,6 +111,6 @@ export default function Form() {
           )}
         </div>
       </Modal>
-    </form>
+    </>
   );
 }
