@@ -3,7 +3,7 @@ import BurgerMenu from "./BurgerMenu";
 import Logo from "./Logo";
 import NavBar from "./NavBar";
 import ResumeLink from "./ResumeLink";
-import crossIcon from "../../assets/cross.svg";
+import crossIcon from "@app/assets/cross.svg";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

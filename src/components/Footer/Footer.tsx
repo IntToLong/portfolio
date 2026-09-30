@@ -1,4 +1,4 @@
-import Logo from "../Header/Logo";
+import Logo from "@app/components/Header/Logo";
 
 export default function Footer() {
   const year: number = new Date().getFullYear();

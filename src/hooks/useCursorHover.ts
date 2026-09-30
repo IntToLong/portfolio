@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import CursorContext from "../contexts/CursorContext";
+import CursorContext from "@app/contexts/CursorContext";
 
 export const useCursorHover = () => {
   const { changeSize, changeColor } = useContext(CursorContext);

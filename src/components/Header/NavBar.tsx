@@ -1,6 +1,6 @@
-import { linksInfo } from "../../constants";
+import { linksInfo } from "@app/constants";
 import Link from "./Link";
-import { NavLink } from "../../types/nav";
+import { NavLink } from "@app/types/nav";
 
 type Props = {
   isMenuOpen: boolean;

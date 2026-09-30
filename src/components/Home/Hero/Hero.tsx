@@ -1,5 +1,5 @@
 import SocialMedia from "./SocialMedia";
-import girl from "../../assets/girlWithLaptop.svg";
+import girl from "@app/assets/girlWithLaptop.svg";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "motion/react";
 
